@@ -4,6 +4,9 @@ language: node_js
 node_js:
   - '0.8'
   - '0.10'
+  - '6'
+  - '5'
+  - '4'
 
 # run tests agaginst a browser users might be using.
 # some tests would pass in Phantom but fail in chrome
