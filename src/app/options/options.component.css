@@ -24,13 +24,11 @@ button:hover {
   display: inline-block;
   width: 40%;
   margin-right: 13.5%;
-  margin-left: 3%;
 }
 
 .return {
   display: inline-block;
   width: 40%;
-  margin-right: 3%;
 }
 
 .full button span {

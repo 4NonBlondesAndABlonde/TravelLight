@@ -44,6 +44,15 @@ export class OptionsComponent {
     this.originSelectedState = state
     console.log(this.originSelectedState)
   }
+
+
+  originSelectedDate: any = null;
+  public originDateSelected(date) {
+    this.originSelectedDate = date
+    console.log(this.originSelectedDate)
+    return this.originSelectedDate;
+  }
+
   constructor() { }
 
   ngOnInit() {
