@@ -1,5 +1,5 @@
 <button type="button" class="btn btn-primary center-block" (click)="smModal.show()">Start your journey</button>
- 
+
 <div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
@@ -11,16 +11,9 @@
       </div>
       <div class="modal-body">
         <div class="depart">
-          <h5>Departure</h5>
-          <input [(ngModel)]="departure"
-                [typeahead]="statesComplex"
-                [typeaheadOptionField]="'name'"
-                [typeaheadOptionsLimit]="7"
-                (typeaheadOnSelect)="typeaheadOnSelect($event)"
-                placeholder="Pick a location"
-                class="form-control">
+
         </div>
-        <div class="return">
+        <!-- <div class="return">
           <h5>Return</h5>
           <input [(ngModel)]="return"
                 [typeahead]="statesComplex"
@@ -29,7 +22,10 @@
                 (typeaheadOnSelect)="typeaheadOnSelect($event)"
                 placeholder="Pick a location"
                 class="form-control">
-        </div>
+        </div> -->
+
+
+
       </div>
     </div>
   </div>
