@@ -11,15 +11,22 @@
       </div>
       <div class="modal-body">
         <div class="depart">
-
-        </div>
-        <!-- <div class="return">
-          <h5>Return</h5>
-          <input [(ngModel)]="return"
+          <h5>Origin</h5>
+          <input [(ngModel)]="originSelectedState"
                 [typeahead]="statesComplex"
                 [typeaheadOptionField]="'name'"
                 [typeaheadOptionsLimit]="7"
-                (typeaheadOnSelect)="typeaheadOnSelect($event)"
+                (typeaheadOnSelect)="originStateSelected($event)"
+                placeholder="Pick a location"
+                class="form-control">
+        </div>
+        <div class="return">
+          <h5>Destination</h5>
+          <input [(ngModel)]="destinationSelectedState"
+                [typeahead]="statesComplex"
+                [typeaheadOptionField]="'name'"
+                [typeaheadOptionsLimit]="7"
+                (typeaheadOnSelect)="destinationStateSelected($event)"
                 placeholder="Pick a location"
                 class="form-control">
         </div> -->

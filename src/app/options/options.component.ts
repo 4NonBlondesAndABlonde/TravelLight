@@ -34,4 +34,19 @@ export class OptionsComponent {
     {id: 49, name: 'West Virginia', region: 'South'}, {id: 50, name: 'Wisconsin', region: 'Midwest'},
     {id: 51, name: 'Wyoming', region: 'West'}];
 
+  destinationSelectedState: any = null;
+  public destinationStateSelected(state) {
+    this.destinationSelectedState = state
+    console.log(this.destinationSelectedState)
+  }
+  originSelectedState: any = null;
+  public originStateSelected(state) {
+    this.originSelectedState = state
+    console.log(this.originSelectedState)
+  }
+  constructor() { }
+
+  ngOnInit() {
+  }
+
 }

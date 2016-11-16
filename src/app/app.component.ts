@@ -5,6 +5,7 @@ import { Component, ViewContainerRef } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   private viewContainerRef: ViewContainerRef;
 
@@ -13,3 +14,4 @@ export class AppComponent {
     this.viewContainerRef = viewContainerRef;
   }
 }
+
