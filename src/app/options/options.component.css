@@ -32,3 +32,14 @@ button:hover {
   width: 40%;
   margin-right: 3%;
 }
+
+.full button span {
+background-color: limegreen;
+border-radius: 32px;
+color: black;
+}
+.partially button span {
+background-color: orange;
+border-radius: 32px;
+color: black;
+}
