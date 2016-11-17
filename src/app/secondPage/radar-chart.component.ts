@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import{ ChartsModule } from 'ng2-charts/ng2-charts'
+import{ ChartsModule } from '../../../node_modules/ng2-charts/ng2-charts'
 import { CostInfoService } from './cost-info.service'
 import { TravelInfo } from './travelInfo';
 

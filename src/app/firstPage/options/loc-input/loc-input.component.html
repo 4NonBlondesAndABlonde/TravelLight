@@ -1,13 +1,22 @@
 <div class="origin">
   <label for="origin">Origin</label>
-  <input [(ngModel)]="originSelectedState"
-        [typeahead]="statesComplex"
-        [typeaheadOptionField]="'name'"
+  <input [(ngModel)]="asyncSelected"
+        [typeahead]="dataSource"
+        [typeaheadOptionField]="'Name'"
         [typeaheadOptionsLimit]="7"
-        (typeaheadOnSelect)="originStateSelected($event)"
+        (typeaheadLoading)="changeTypeaheadLoading($event)"
+        (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+        (typeaheadOnSelect)="typeaheadOnSelect($event)"
+        [typeaheadWaitMs]="300"
         placeholder="Pick a location"
         class="form-control"
         id="origin">
+  <div *ngIf="typeaheadLoading===true">
+    <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+  </div>
+  <div *ngIf="typeaheadNoResults===true" class="" style="">
+    <i class="glyphicon glyphicon-remove"></i> No Results Found
+  </div>
   <app-date-input></app-date-input>
 </div>
 <div class="destination">

@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ModalDirective } from '../../../../node_modules/ng2-bootstrap/components/modal/modal.component';
+import { AirportLocationService } from '../airport-location.service';
 
 @Component({
   selector: 'app-options',
@@ -8,6 +9,8 @@ import { ModalDirective } from '../../../../node_modules/ng2-bootstrap/component
 })
 
 export class OptionsComponent {
+  // constructor(private airportLocationService: AirportLocationService) {}
+
   @ViewChild('childModal') public childModal:ModalDirective;
  
   public showChildModal():void {
@@ -17,5 +20,11 @@ export class OptionsComponent {
   public hideChildModal():void {
     this.childModal.hide();
   }
+
+  // ngOnInit() {
+  //   this.airportLocationService
+  //   .getAirports(S)
+  //   .subscribe(airports => console.log(airports));
+  // }
 
 }
