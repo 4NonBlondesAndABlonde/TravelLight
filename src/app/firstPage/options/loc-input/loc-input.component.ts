@@ -40,16 +40,16 @@ export class LocInputComponent {
           }
         }))
       })
-      this.airportLocationService
-      .getAirports(this.destinationAirport)
-      .subscribe((result:any) => {
-        observer.next(result.filter(item => {
-          let query = new RegExp(this.destinationAirport, 'ig');
-          if (!!item.City) {
-            return item.City.match(query);
-          }
-        }))
-      })
+      // this.airportLocationService
+      // .getAirports(this.destinationAirport)
+      // .subscribe((result:any) => {
+      //   observer.next(result.filter(item => {
+      //     let query = new RegExp(this.destinationAirport, 'ig');
+      //     if (!!item.City) {
+      //       return item.City.match(query);
+      //     }
+      //   }))
+      // })
     })
   }
  
