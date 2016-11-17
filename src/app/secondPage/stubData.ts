@@ -1,10 +1,10 @@
 import { TravelInfo } from './travelInfo'
 export const TRAVELDATA: TravelInfo[] = [
-    {   data: [50, 4, 150],
+    {   data: [50, 4.1, 150],
         label: 'car'
     },
     {
-        data: [200, 2, 100],
+        data: [200, 2.3, 100],
         label: 'plane'
     }
 ]
