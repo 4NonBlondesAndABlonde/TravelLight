@@ -1,0 +1,12 @@
+.origin {
+  display: inline-block;
+  width: 40%;
+  margin-right: 13.5%;
+  margin-left: 3%;
+}
+
+.destination {
+  display: inline-block;
+  width: 40%;
+  margin-right: 3%;
+}

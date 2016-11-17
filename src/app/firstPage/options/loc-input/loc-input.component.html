@@ -1,0 +1,27 @@
+<div class="origin">
+  <label for="origin">Origin</label>
+  <input [(ngModel)]="originSelectedState"
+        [typeahead]="statesComplex"
+        [typeaheadOptionField]="'name'"
+        [typeaheadOptionsLimit]="7"
+        (typeaheadOnSelect)="originStateSelected($event)"
+        placeholder="Pick a location"
+        class="form-control"
+        id="origin">
+  <app-date-input></app-date-input>
+</div>
+<div class="destination">
+  <label for="destination">Destination</label>
+  <input [(ngModel)]="destinationSelectedState"
+        [typeahead]="statesComplex"
+        [typeaheadOptionField]="'name'"
+        [typeaheadOptionsLimit]="7"
+        (typeaheadOnSelect)="destinationStateSelected($event)"
+        placeholder="Pick a location"
+        class="form-control"
+        id="destination">
+  <app-date-input></app-date-input>
+</div>
+<div>
+  <app-travelers></app-travelers>
+</div>

@@ -6,31 +6,81 @@ import { ModalModule } from 'ng2-bootstrap/components/modal';
 import { TypeaheadModule } from 'ng2-bootstrap/components/typeahead';
 import { DatepickerModule } from 'ng2-bootstrap/components/datepicker';
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header.component';
-import { SloganComponent } from './slogan.component';
-import { OptionsComponent } from './options/options.component';
-import { DatesComponent } from './dates/dates.component';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
+
+//App Root
+import { AppComponent } from './app.component';
+
+
+//Home page
+import { HomeComponent } from './firstPage/home.component';
+import { HeaderComponent } from './firstPage/header/header.component';
+import { OptionsComponent } from './firstPage/options/options.component';
+import { LocInputComponent } from './firstPage/options/loc-input/loc-input.component';
+import { DateInputComponent } from './firstPage/options/date-input/date-input.component';
+import { TravelersComponent } from './firstPage/options/travelers/travelers.component';
+import { SloganComponent } from './firstPage/slogan/slogan.component';
+
+//Results page
+import { ResultsComponent } from './secondPage/second.page.component';
+import { BannerComponent } from './secondPage/banner.component';
+import { CarCardComponent } from './secondPage/car-card.component';
+import { AirplaneCardComponent } from './secondPage/airplane-card.component';
+import { SearchBarComponent} from './secondPage/search-bar.component';
+import { D3VisComponent } from './secondPage/d3-vis.component';
+import { CarStatsComponent } from './secondPage/car-stats.component';
+import { PlaneStatsComponent } from './secondPage/plane-stats.component';
+import { BikeCardComponent } from './secondPage/bike-card.component';
+import { TrainCardComponent } from './secondPage/train-card.component';
+import { WalkCardComponent } from './secondPage/walk-card.component';
+import { RadarChartComponent } from './secondPage/radar-chart.component'
+import { PreferenceSliderComponent } from './secondPage/preference-slider.component'
+import { PreferenceSliderContainerComponent } from './secondPage/preference-slider-container.component'
+
+//Services
+import { CostInfoService } from './secondPage/cost-info.service';
+
+
+import { routing } from './app.routing';
+>>>>>>> upstream/master
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     HeaderComponent,
     SloganComponent,
     OptionsComponent,
-    DatesComponent,
+    ResultsComponent,
+    BannerComponent,
+    CarCardComponent,
+    AirplaneCardComponent,
+    SearchBarComponent,
+    D3VisComponent,
+    CarStatsComponent,
+    PlaneStatsComponent,
+    BikeCardComponent,
+    TrainCardComponent,
+    WalkCardComponent,
+    LocInputComponent,
+    DateInputComponent,
+    TravelersComponent,
+    RadarChartComponent,
+    PreferenceSliderComponent,
+    PreferenceSliderContainerComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
     ModalModule,
+    TypeaheadModule,
     DatepickerModule,
-    TypeaheadModule
+    routing,
+    ChartsModule
   ],
-  providers: [],
+  providers: [CostInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

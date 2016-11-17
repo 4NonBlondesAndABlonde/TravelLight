@@ -1,13 +1,12 @@
 import { Component, ViewContainerRef } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl:
-  `<router-outlet></router-outlet>`
-  ,
-  styleUrls: ['./app.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class AppComponent {
+
+export class HomeComponent {
   private viewContainerRef: ViewContainerRef;
 
   public constructor(viewContainerRef:ViewContainerRef) {
@@ -15,3 +14,4 @@ export class AppComponent {
     this.viewContainerRef = viewContainerRef;
   }
 }
+

@@ -1,12 +1,13 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-options',
-  templateUrl: './options.component.html',
-  styleUrls: ['./options.component.css']
+  selector: 'app-loc-input',
+  templateUrl: './loc-input.component.html',
+  styleUrls: ['./loc-input.component.css']
 })
 
-export class OptionsComponent {
+export class LocInputComponent {
   public statesComplex:Array<any> = [
     {id: 1, name: 'Alabama', region: 'South'}, {id: 2, name: 'Alaska', region: 'West'}, {id: 3, name: 'Arizona', region: 'West'},
     {id: 4, name: 'Arkansas', region: 'South'}, {id: 5, name: 'California', region: 'West'},
@@ -32,7 +33,8 @@ export class OptionsComponent {
     {id: 45, name: 'Utah', region: 'West'}, {id: 46, name: 'Vermont', region: 'Northeast'},
     {id: 47, name: 'Virginia', region: 'South'}, {id: 48, name: 'Washington', region: 'South'},
     {id: 49, name: 'West Virginia', region: 'South'}, {id: 50, name: 'Wisconsin', region: 'Midwest'},
-    {id: 51, name: 'Wyoming', region: 'West'}];
+    {id: 51, name: 'Wyoming', region: 'West'}
+  ];
 
   destinationSelectedState: any = null;
   public destinationStateSelected(state) {
@@ -44,18 +46,4 @@ export class OptionsComponent {
     this.originSelectedState = state
     console.log(this.originSelectedState)
   }
-
-
-  originSelectedDate: any = null;
-  public originDateSelected(date) {
-    this.originSelectedDate = date
-    console.log(this.originSelectedDate)
-    return this.originSelectedDate;
-  }
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

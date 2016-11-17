@@ -1,0 +1,21 @@
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -68.54px;
+  color: #625949;
+  background-color: #FBF3EC;
+  border: none;
+  -webkit-box-shadow: -4px 3px 5px -3px rgba(98,89,73,1);
+  -moz-box-shadow: -4px 3px 5px -3px rgba(98,89,73,1);
+  box-shadow: -4px 3px 5px -3px rgba(98,89,73,1);
+}
+
+.popup:hover {
+  color: #625949;
+  background-color: #ede6e1;
+}
+
+.modal-header, .modal-footer {
+  text-align: center;
+}
