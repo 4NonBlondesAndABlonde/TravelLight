@@ -1,16 +1,16 @@
 import { TravelInfo } from './travelInfo'
 export const TRAVELDATA: TravelInfo[] = [
-    {   data: [50, 4, 150],
+    {   data: [118.35, 11.71, 783.44 / 2],
         label: 'car'
     },
     {
-        data: [200, 2, 100],
+        data: [88 * 2, 2.85, 749],
         label: 'plane'
     }
 ]
 
 export const NORMALIZERS: any = {
-    distance: 200,
-    data: [57, 3, 125]
+    distance: 665,
+    data: [135, 7, 400]
 }
 //cost, time, emissions

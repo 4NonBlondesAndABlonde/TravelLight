@@ -11,10 +11,10 @@ import { Component, OnInit, Input } from '@angular/core';
   `,
   styles: [`
     div {
-      margin: 0 0 0 15%;
+      margin-left: 8%;
       width:70%;
       height:60%;
-      background-color: #cdc0b0;
+      // background-color: #cdc0b0;
       clear: both;
     }
   `]

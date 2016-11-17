@@ -1,36 +1,46 @@
 <div class="origin">
-  <label for="origin">Origin</label>
-  <input [(ngModel)]="asyncSelected"
-        [typeahead]="dataSource"
+  <label for="origin">Airport of Origin</label>
+  <input [(ngModel)]="originAirport"
+        [typeahead]="dataSource1"
         [typeaheadOptionField]="'Name'"
         [typeaheadOptionsLimit]="7"
-        (typeaheadLoading)="changeTypeaheadLoading($event)"
-        (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+        (typeaheadLoading)="changeTypeaheadOriginLoading($event)"
+        (typeaheadNoResults)="changeTypeaheadOriginNoResults($event)"
         (typeaheadOnSelect)="typeaheadOnSelect($event)"
         [typeaheadWaitMs]="300"
         placeholder="Pick a location"
         class="form-control"
         id="origin">
-  <div *ngIf="typeaheadLoading===true">
-    <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
-  </div>
-  <div *ngIf="typeaheadNoResults===true" class="" style="">
-    <i class="glyphicon glyphicon-remove"></i> No Results Found
+  <div class="icons">
+    <div *ngIf="typeaheadOriginLoading===true">
+      <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+    </div>
+    <div *ngIf="typeaheadOriginNoResults===true" class="" style="">
+      <i class="glyphicon glyphicon-remove"></i> No Results Found
+    </div>
   </div>
   <app-date-input></app-date-input>
 </div>
 <div class="destination">
-  <label for="destination">Destination</label>
-  <input [(ngModel)]="destinationSelectedState"
-        [typeahead]="statesComplex"
-        [typeaheadOptionField]="'name'"
+  <label for="destination">Airport of Destination</label>
+  <input [(ngModel)]="destinationAirport"
+        [typeahead]="dataSource2"
+        [typeaheadOptionField]="'Name'"
         [typeaheadOptionsLimit]="7"
-        (typeaheadOnSelect)="destinationStateSelected($event)"
+        (typeaheadLoading)="changeTypeaheadDestinationLoading($event)"
+        (typeaheadNoResults)="changeTypeaheadDestinationNoResults($event)"
+        (typeaheadOnSelect)="typeaheadOnSelect($event)"
+        [typeaheadWaitMs]="300"
         placeholder="Pick a location"
         class="form-control"
         id="destination">
-  <app-date-input></app-date-input>
-</div>
-<div>
+  <div class="icons">
+    <div *ngIf="typeaheadDestinationLoading===true">
+      <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+    </div>
+    <div *ngIf="typeaheadDestinationNoResults===true" class="" style="">
+      <i class="glyphicon glyphicon-remove"></i> No Results Found
+    </div>
+  </div>
   <app-travelers></app-travelers>
 </div>

@@ -19,62 +19,61 @@ export class LocInputComponent {
     state: this.stateCtrl
   });
 
-  public dataSource:Observable<any>;
-  public asyncSelected:string = '';
-  public typeaheadLoading:boolean = false;
-  public typeaheadNoResults:boolean = false;
+  public dataSource1:Observable<any>;
+  public dataSource2:Observable<any>;
+  public originAirport:string = '';
+  public destinationAirport:string = '';
+  public typeaheadOriginLoading:boolean = false;
+  public typeaheadOriginNoResults:boolean = false;
+  public typeaheadDestinationLoading:boolean = false;
+  public typeaheadDestinationNoResults:boolean = false;
 
   public constructor(private airportLocationService: AirportLocationService) {
-    this.dataSource = Observable.create((observer:any) => {
+    this.dataSource1 = Observable.create((observer:any) => {
       // Runs on every search
       this.airportLocationService
-      .getAirports(this.asyncSelected)
+      .getAirports(this.originAirport)
       .subscribe((result:any) => {
-        console.log('RESULTTT ', result);
         observer.next(result.filter(item => {
-          // var self = this;
-          let query = new RegExp(this.asyncSelected, 'ig');
+          let query = new RegExp(this.originAirport, 'ig');
           if (!!item.City) {
             return item.City.match(query);
           }
         }))
       })
     })
-
-    // }).mergeMap((token:string) => this.getAirportsAsObservable(token));
+    this.dataSource2 = Observable.create((observer:any) => {
+      // Runs on every search
+      this.airportLocationService
+      .getAirports(this.destinationAirport)
+      .subscribe((result:any) => {
+        observer.next(result.filter(item => {
+          let query = new RegExp(this.destinationAirport, 'ig');
+          if (!!item.City) {
+            return item.City.match(query);
+          }
+        }))
+      })
+    })
   }
 
-  // public getAirportsAsObservable(token:string):Observable<any> {
-  //   let query = new RegExp(token, 'ig');
-
-  //   return Observable.of(
-  //     this.dataSource.filter((airports:any) => {
-  //       console.log(airports.City);
-  //       return query.test(airports.City);
-  //     })
-  //   );
-  // }
-
-  public changeTypeaheadLoading(e:boolean):void {
-    this.typeaheadLoading = e;
+  public changeTypeaheadOriginLoading(e:boolean):void {
+    this.typeaheadOriginLoading = e;
   }
 
-  public changeTypeaheadNoResults(e:boolean):void {
-    this.typeaheadNoResults = e;
+  public changeTypeaheadOriginNoResults(e:boolean):void {
+    this.typeaheadOriginNoResults = e;
+  }
+
+  public changeTypeaheadDestinationLoading(e:boolean):void {
+    this.typeaheadDestinationLoading = e;
+  }
+
+  public changeTypeaheadDestinationNoResults(e:boolean):void {
+    this.typeaheadDestinationNoResults = e;
   }
 
   public typeaheadOnSelect(e:TypeaheadMatch):void {
     console.log('Selected value: ', e.value);
-  }
-
-  destinationSelectedState: any = null;
-  public destinationStateSelected(state) {
-    this.destinationSelectedState = state
-    console.log(this.destinationSelectedState)
-  }
-  originSelectedState: any = null;
-  public originStateSelected(state) {
-    this.originSelectedState = state
-    console.log(this.originSelectedState)
   }
 }

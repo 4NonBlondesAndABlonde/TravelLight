@@ -10,8 +10,6 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [`
     .travelers {
-      width: 25%;
-      margin: 0 auto;
       margin-top: 5px;
     }
   `]
