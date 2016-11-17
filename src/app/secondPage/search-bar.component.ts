@@ -12,10 +12,10 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [`
     form {
-      margin: 0 0 0 10%;
+      margin: 0 0 0 5%;
     }
     input {
-      margin: 2% 5% 2% 0;
+      margin: 2% 2% 2% 0;
     }
   `]
 })

@@ -14,6 +14,8 @@ import { Component } from '@angular/core';
       text-align: center;
       color: #FBF3EC;
       text-shadow: 1px 1px 1px #938380;
+      margin-top:0;
+      padding-top:5%;
     }
   `]
 })

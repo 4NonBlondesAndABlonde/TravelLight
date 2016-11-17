@@ -21,7 +21,8 @@ import { CarCardComponent } from './secondPage/car-card.component';
 import { AirplaneCardComponent } from './secondPage/airplane-card.component';
 import { SearchBarComponent} from './secondPage/search-bar.component';
 import { D3VisComponent } from './secondPage/d3-vis.component';
-import { CompStatsComponent } from './secondPage/comp-stats.component';
+import { CarStatsComponent } from './secondPage/car-stats.component';
+import { PlaneStatsComponent } from './secondPage/plane-stats.component';
 import { BikeCardComponent } from './secondPage/bike-card.component';
 import { TrainCardComponent } from './secondPage/train-card.component';
 import { WalkCardComponent } from './secondPage/walk-card.component';
@@ -46,7 +47,8 @@ import { routing } from './app.routing';
     AirplaneCardComponent,
     SearchBarComponent,
     D3VisComponent,
-    CompStatsComponent,
+    CarStatsComponent,
+    PlaneStatsComponent,
     BikeCardComponent,
     TrainCardComponent,
     WalkCardComponent
