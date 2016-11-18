@@ -1,4 +1,5 @@
-<div class="origin">
+<div class="wannabearow flex-container">
+<div class="origin flex-item">
   <label for="origin">Airport of Origin</label>
   <input [(ngModel)]="originAirport"
         [typeahead]="dataSource1"
@@ -21,7 +22,7 @@
   </div>
   <app-date-input></app-date-input>
 </div>
-<div class="destination">
+<div class="destination flex-item">
   <label for="destination">Airport of Destination</label>
   <input [(ngModel)]="destinationAirport"
         [typeahead]="dataSource2"
@@ -43,4 +44,5 @@
     </div>
   </div>
   <app-travelers></app-travelers>
+</div>
 </div>
