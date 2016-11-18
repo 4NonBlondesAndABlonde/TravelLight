@@ -1,46 +1,49 @@
-<div class="origin">
-  <label for="origin">Airport of Origin</label>
-  <input [(ngModel)]="originAirport"
-        [typeahead]="dataSource1"
-        [typeaheadOptionField]="'Name'"
-        [typeaheadOptionsLimit]="7"
-        (typeaheadLoading)="changeTypeaheadOriginLoading($event)"
-        (typeaheadNoResults)="changeTypeaheadOriginNoResults($event)"
-        (typeaheadOnSelect)="typeaheadOnSelect($event)"
-        [typeaheadWaitMs]="300"
-        placeholder="Pick a location"
-        class="form-control"
-        id="origin">
-  <div class="icons">
-    <div *ngIf="typeaheadOriginLoading===true">
-      <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+<div class="flex-container">
+  <div class="origin flex-item">
+    <label for="origin">Airport of Origin</label>
+    <input [(ngModel)]="originAirport"
+          [typeahead]="dataSource1"
+          [typeaheadOptionField]="'Name'"
+          [typeaheadOptionsLimit]="7"
+          (typeaheadLoading)="changeTypeaheadOriginLoading($event)"
+          (typeaheadNoResults)="changeTypeaheadOriginNoResults($event)"
+          (typeaheadOnSelect)="typeaheadOnSelect($event)"
+          [typeaheadWaitMs]="300"
+          placeholder="Pick a location"
+          class="form-control"
+          id="origin">
+    <div class="icons">
+      <div *ngIf="typeaheadOriginLoading===true">
+        <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+      </div>
+      <div *ngIf="typeaheadOriginNoResults===true" class="" style="">
+        <i class="glyphicon glyphicon-remove"></i> No Results Found
+      </div>
     </div>
-    <div *ngIf="typeaheadOriginNoResults===true" class="" style="">
-      <i class="glyphicon glyphicon-remove"></i> No Results Found
-    </div>
+    <app-date-input></app-date-input>
   </div>
-  <app-date-input></app-date-input>
-</div>
-<div class="destination">
-  <label for="destination">Airport of Destination</label>
-  <input [(ngModel)]="destinationAirport"
-        [typeahead]="dataSource2"
-        [typeaheadOptionField]="'Name'"
-        [typeaheadOptionsLimit]="7"
-        (typeaheadLoading)="changeTypeaheadDestinationLoading($event)"
-        (typeaheadNoResults)="changeTypeaheadDestinationNoResults($event)"
-        (typeaheadOnSelect)="typeaheadOnSelect($event)"
-        [typeaheadWaitMs]="300"
-        placeholder="Pick a location"
-        class="form-control"
-        id="destination">
-  <div class="icons">
-    <div *ngIf="typeaheadDestinationLoading===true">
-      <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+
+  <div class="destination flex-item">
+    <label for="destination">Airport of Destination</label>
+    <input [(ngModel)]="destinationAirport"
+          [typeahead]="dataSource2"
+          [typeaheadOptionField]="'Name'"
+          [typeaheadOptionsLimit]="7"
+          (typeaheadLoading)="changeTypeaheadDestinationLoading($event)"
+          (typeaheadNoResults)="changeTypeaheadDestinationNoResults($event)"
+          (typeaheadOnSelect)="typeaheadOnSelect($event)"
+          [typeaheadWaitMs]="300"
+          placeholder="Pick a location"
+          class="form-control"
+          id="destination">
+    <div class="icons">
+      <div *ngIf="typeaheadDestinationLoading===true">
+        <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+      </div>
+      <div *ngIf="typeaheadDestinationNoResults===true" class="" style="">
+        <i class="glyphicon glyphicon-remove"></i> No Results Found
+      </div>
     </div>
-    <div *ngIf="typeaheadDestinationNoResults===true" class="" style="">
-      <i class="glyphicon glyphicon-remove"></i> No Results Found
-    </div>
+    <app-travelers></app-travelers>
   </div>
-  <app-travelers></app-travelers>
 </div>

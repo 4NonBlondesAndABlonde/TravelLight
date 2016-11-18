@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Directive, OnInit, Output, EventEmitter, Input, TemplateRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ModalModule } from 'ng2-bootstrap/components/modal';
@@ -10,6 +10,7 @@ import { ChartsModule } from '../../node_modules/ng2-charts/ng2-charts';
 
 //App Root
 import { AppComponent } from './app.component';
+
 
 //Home page
 import { HomeComponent } from './firstPage/home.component';
