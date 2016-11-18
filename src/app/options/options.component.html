@@ -1,0 +1,56 @@
+<button type="button" class="btn btn-primary center-block" (click)="smModal.show()">Start your journey</button>
+
+<div bsModal #smModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" aria-label="Close" (click)="smModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+        <h4 class="modal-title">About your Journey</h4>
+      </div>
+      <div class="modal-body">
+        <div class="depart">
+          <h5>Origin</h5>
+          <input [(ngModel)]="originSelectedState"
+                [typeahead]="statesComplex"
+                [typeaheadOptionField]="'name'"
+                [typeaheadOptionsLimit]="7"
+                (typeaheadOnSelect)="originStateSelected($event)"
+                placeholder="Pick a location"
+                class="form-control">
+        </div>
+        <div class="return">
+          <h5>Destination</h5>
+          <input [(ngModel)]="destinationSelectedState"
+                [typeahead]="statesComplex"
+                [typeaheadOptionField]="'name'"
+                [typeaheadOptionsLimit]="7"
+                (typeaheadOnSelect)="destinationStateSelected($event)"
+                placeholder="Pick a location"
+                class="form-control">
+        </div>
+
+        <!-- DATEPICKER -->
+        <div>
+
+          <app-dates></app-dates>
+          <!-- <pre class="card card-block card-header">Selected date is:
+            <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>
+          <h4>Inline</h4>
+          <div style="display:inline-block; min-height:290px;">
+            <datepicker [(ngModel)]="dt"
+              [minDate]="minDate"
+              [showWeeks]="true">
+            </datepicker> -->
+          </div>
+
+          <hr />
+          <button type="button" class="btn btn-sm btn-info" (click)="today()">Today</button>
+          <button type="button" class="btn btn-sm btn-default btn-secondary" (click)="d20090824();">2009-08-24</button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="clear()">Clear</button>
+          <button type="button" class="btn btn-sm btn-default btn-secondary" (click)="toggleMin()" tooltip="After today restriction">Min date</button>
+        </div>
+    </div>
+  </div>
+</div>

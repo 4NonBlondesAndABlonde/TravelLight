@@ -27,7 +27,7 @@ export class LocInputComponent {
   public typeaheadOriginNoResults:boolean = false;
   public typeaheadDestinationLoading:boolean = false;
   public typeaheadDestinationNoResults:boolean = false;
-  
+
   public constructor(private airportLocationService: AirportLocationService) {
     this.dataSource1 = Observable.create((observer:any) => {
       // Runs on every search
@@ -56,11 +56,11 @@ export class LocInputComponent {
       })
     })
   }
- 
+
   public changeTypeaheadOriginLoading(e:boolean):void {
     this.typeaheadOriginLoading = e;
   }
- 
+
   public changeTypeaheadOriginNoResults(e:boolean):void {
     this.typeaheadOriginNoResults = e;
   }
@@ -68,11 +68,11 @@ export class LocInputComponent {
   public changeTypeaheadDestinationLoading(e:boolean):void {
     this.typeaheadDestinationLoading = e;
   }
- 
+
   public changeTypeaheadDestinationNoResults(e:boolean):void {
     this.typeaheadDestinationNoResults = e;
   }
- 
+
   public typeaheadOnSelect(e:TypeaheadMatch):void {
     console.log('Selected value: ', e.value);
   }
