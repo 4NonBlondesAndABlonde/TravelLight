@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css?family=Courgette|Lato');
+
+.banner {
+  background:url('../assets/TravelLightBanner2.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%
+}
+.container {
+  height: 150px;
+  width: 100%;
+  color: white;
+}
+p {
+  padding-top: 8%;
+  padding-left: 5%;
+  font-family: 'Lato';
+  font-size: 2em;
+}
+a {
+  text-decoration: none;
+  color:ivory;
+}
+/*.newsearch {
+  float:right;
+}*/
+

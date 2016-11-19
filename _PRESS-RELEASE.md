@@ -28,8 +28,8 @@ Once the project moves into development, the press release can be used as a touc
   TravelLight will not only give you information on the best travel decisions based on your cost and time, but also on the environmental impact. You can easily compare and contrast different modes of transportation to choose the best fit for you.
 
 ## Quote from our staff ##
-  "Wow, D3 visualizations are cool."
-    --Spokesperson#2
+  "I love triangles."
+    --Ivey T▲paz, Chief Visualization Officer
 
 ## How to Get Started ##
   Here at TravelLight, we aim to make the experience easy for you to get started. All you need to do is input where you're starting from and where you'd like to travel. Behind the scenes, we'll crunch the data and display it for you in an intuitive way.
