@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output, NgZone } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { TravelInfo } from './travelInfo';
 import { Observable } from 'rxjs/Rx';
+import { Subject }    from 'rxjs/Subject';
 import { TRAVELDATA, NORMALIZERS } from './stubData';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class CostInfoService {
-
+  //@Output() receivedData = new EventEmitter<Object>()
   private planeInfoUrl = 'http://localhost:1337/api/planes';
   private averagesUrl = 'http://localhost:1337/api/normalizers';
   private carInfoUrl = 'http://localhost:1337/api/cars';
@@ -16,7 +17,16 @@ export class CostInfoService {
   private averageData: { data: any[], distance: number };
   private normalizedData: TravelInfo[];
 
-  constructor(private http: Http) {}
+  constructor(private http: Http, private _ngZone:NgZone) { }
+   
+
+  sendUserInput(userInput:Object) {
+    console.log('called get costs from cost info service')
+    return new Observable(observer => {
+      this.getCosts()
+      .subscribe(data => observer.next(data))
+    })
+  }
 
   getCosts() { return Observable.forkJoin(
       this.http.get(this.carInfoUrl),

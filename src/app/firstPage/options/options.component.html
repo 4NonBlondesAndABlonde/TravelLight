@@ -10,7 +10,7 @@
         <app-loc-input></app-loc-input>
       </div>
       <div class="modal-footer">
-        <button routerLink="/results" routerLinkActive="active" (click)="mdModal.hide()">
+        <button  (click)="mdModal.hide(); onClick($event)">
           Submit
         </button>
       </div>
