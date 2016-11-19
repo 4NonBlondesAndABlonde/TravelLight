@@ -1,0 +1,23 @@
+.origin {
+  display: inline-block;
+  width: 40%;
+  /*margin-right: 13.5%;
+  margin-left: 3%;*/
+}
+
+.destination {
+  display: inline-block;
+  width: 40%;
+  /*margin-right: 3%;*/
+}
+
+.icons {
+  text-align: center;
+}
+
+.flex-container {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ }

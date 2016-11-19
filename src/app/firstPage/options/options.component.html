@@ -1,0 +1,19 @@
+<button type="button" class="btn btn-primary center-block popup" (click)="mdModal.show()">Start your journey</button>
+
+<div bsModal #mdModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" style="min-height: 1000px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Journey Details</h4>
+      </div>
+      <div class="modal-body">
+        <app-loc-input (locNotify)='onLocNotify($event)'></app-loc-input>
+      </div>
+      <div class="modal-footer">
+        <button  (click)="mdModal.hide(); onClick($event)">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

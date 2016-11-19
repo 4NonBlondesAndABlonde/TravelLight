@@ -1,0 +1,24 @@
+<div class="form-group date">
+  <label for="date">Departure Date</label>
+  <input type="date" class="form-control" id="date">
+</div>
+<!--<button type="button" class="btn btn-primary" (click)="showChildModal()">Date Icon (believe)</button>-->
+ 
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div>
+          <pre class="card card-block card-header"><em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>
+          <div style="display:inline-block;">
+            <datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="false"></datepicker>
+          </div>
+          <button type="button" class="btn btn-sm btn-info" (click)="today()">Today</button>
+          <button type="button" class="btn btn-sm btn-default btn-secondary" (click)="hideChildModal()">Save</button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="clear()">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
