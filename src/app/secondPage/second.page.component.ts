@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CostInfoService } from './cost-info.service';
+import { SendCostDataService } from '../send-cost-data.service';
 
 @Component({
   selector: 'app-results',
@@ -7,10 +7,9 @@ import { CostInfoService } from './cost-info.service';
   styleUrls: ['./second.page.component.css']
 })
 export class ResultsComponent {
-  constructor(private costInfoService: CostInfoService) {}
-  private costData: any;
+  constructor(private sendCostDataService: SendCostDataService) {}
+  private costData: Object;
   ngOnInit() {
-    this.costInfoService.getCosts()
-      .subscribe(costs => this.costData = costs)
+    this.costData = this.sendCostDataService.dataStore[0];
   }
 }

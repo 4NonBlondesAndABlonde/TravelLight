@@ -38,11 +38,11 @@ import { PreferenceSliderContainerComponent } from './secondPage/preference-slid
 //Services
 import { CostInfoService } from './secondPage/cost-info.service';
 import { AirportLocationService } from './firstPage/airport-location.service';
-
+import { SendCostDataService } from './send-cost-data.service'
 import { AppRoutingModule } from './app-routing.module';
 import { ROUTER_PROVIDERS } from 'angular2/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { PassDataService } from './pass-data.service'
 
 @NgModule({
   declarations: [
@@ -81,6 +81,8 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
   providers: [
     CostInfoService,
     AirportLocationService,
+    PassDataService,
+    SendCostDataService,
     {provide:LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
