@@ -7,7 +7,7 @@
         <h4 class="modal-title">Journey Details</h4>
       </div>
       <div class="modal-body">
-        <app-loc-input></app-loc-input>
+        <app-loc-input (locNotify)='onLocNotify($event)'></app-loc-input>
       </div>
       <div class="modal-footer">
         <button  (click)="mdModal.hide(); onClick($event)">

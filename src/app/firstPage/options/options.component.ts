@@ -13,23 +13,37 @@ import { Router } from '@angular/router'
 })
 
 export class OptionsComponent {
-  information = {
-    originLat: 0,
-    originLng: 0,
-    destinationLat:50,
-    destinationLng:50,
-    travelers: 2,
-    date: new Date(2016,11,11),
-    originAirportCode: 'ABQ',
-    destinationAirportCode: 'SFO'
-  };
+  // information = {
+  //   originLat: 35.04,
+  //   originLng: -106.609,
+  //   destinationLat:37.618,
+  //   destinationLng:-122.374,
+  //   travelers: 2,
+  //   date: '2016-11-20',
+  //   originAirportCode: 'ABQ',
+  //   destinationAirportCode: 'SFO'
+  // };
+  private information:any = {};
   constructor(private costInfoService: CostInfoService, 
   private sendCostDataService: SendCostDataService,
   private router: Router) {
 
   }
 
+  onLocNotify(payload:Object) {
+    this.information = Object.assign(this.information, payload);
+  }
+
+  onDateNotify(payload:string) {
+    this.information.date = payload;
+  }
+
+  onTravelersNotify(payload:number) {
+    this.information.travelers = payload;
+  }
+
   onClick() {
+    console.log('sending ' + this.information)
     this.costInfoService.sendUserInput(this.information)
     .subscribe(results => {
       this.sendCostDataService.sendData(results)

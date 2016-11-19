@@ -20,7 +20,7 @@
       <i class="glyphicon glyphicon-remove"></i> No Results Found
     </div>
   </div>
-  <app-date-input></app-date-input>
+  <app-date-input (dateNotify)='onDateNotify($event)'></app-date-input>
 </div>
 <div class="destination flex-item">
   <label for="destination">Airport of Destination</label>
@@ -43,6 +43,6 @@
       <i class="glyphicon glyphicon-remove"></i> No Results Found
     </div>
   </div>
-  <app-travelers></app-travelers>
+  <app-travelers (travelersNotify)='onTravelersNotify($event)'></app-travelers>
 </div>
 </div>
