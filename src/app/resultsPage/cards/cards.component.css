@@ -1,0 +1,106 @@
+.flex-container {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items:center;
+  justify-content: space-between;
+  align-content: stretch;
+  width: 95%;
+  padding-top: 5%;
+  margin: 0;
+}
+
+.flex-item {
+  width:250px;
+  height:250px;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align:center;
+  color:whitesmoke;
+  text-shadow: 1px 1px 1px black;
+}
+
+.car {
+  background: url('../../assets/drive.jpeg');
+  float:left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  z-index:0;
+}
+.car:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/drive.jpeg');
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/drive.jpeg');
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/drive.jpeg');
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/drive.jpeg');
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url('../../assets/drive.jpeg');
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/drive.jpeg');
+  z-index: 1;
+}
+.plane {
+  background: url('../../assets/plane4.jpeg');
+  float:left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius:10px;
+  z-index:0;
+}
+.plane:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/plane4.jpeg');
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/plane4.jpeg');
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/plane4.jpeg');
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/plane4.jpeg');
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url('../../assets/plane4.jpeg');
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/plane4.jpeg');
+  z-index: 1;
+}
+.walk {
+  background: url('../../assets/walking.jpeg');
+  float:left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius:10px;
+  z-index:0;
+}
+.walk:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/walking.jpeg');
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/walking.jpeg');
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/walking.jpeg');
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/walking.jpeg');
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url('../../assets/walking.jpeg');
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/walking.jpeg');
+  z-index: 1;
+}
+.train {
+  background: url('../../assets/bigtrain.jpeg');
+  float:left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius:10px;
+  z-index:0;
+}
+.train:hover{
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url('../../assets/bigtrain.jpeg');
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
+  z-index: 1;
+}

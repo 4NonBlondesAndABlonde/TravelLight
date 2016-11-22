@@ -22,26 +22,20 @@ import { TravelersComponent } from './firstPage/options/travelers/travelers.comp
 import { SloganComponent } from './firstPage/slogan/slogan.component';
 
 //Results page
-import { ResultsComponent } from './secondPage/second.page.component';
-import { BannerComponent } from './secondPage/banner.component';
-import { CarCardComponent } from './secondPage/cards/car/car-card.component';
-import { AirplaneCardComponent } from './secondPage/cards/plane/airplane-card.component';
-import { SearchBarComponent} from './secondPage/search-bar.component';
-import { CarStatsComponent } from './secondPage/cards/car/car-stats.component';
-import { TrainStatsComponent } from './secondPage/cards/train/train-stats.component';
-import { WalkStatsComponent } from './secondPage/cards/walk/walk-stats.component';
-import { PlaneStatsComponent } from './secondPage/cards/plane/plane-stats.component';
-import { TrainCardComponent } from './secondPage/cards/train/train-card.component';
-import { WalkCardComponent } from './secondPage/cards/walk/walk-card.component';
-import { RadarChartComponent } from './secondPage/radar-chart.component'
-import { PreferenceSliderComponent } from './secondPage/preference-slider.component'
-import { PreferenceSliderContainerComponent } from './secondPage/preference-slider-container.component'
-import { CardsComponent } from './secondPage/cards/cards.component'
-import { TravelpathComponent } from './secondPage/travelpath.component';
-import { ComparisonCardComponent } from './secondPage/comparison-card.component';
+import { ResultsComponent } from './resultsPage/second.page.component';
+import { BannerComponent } from './resultsPage/banner.component';
+import { SearchBarComponent} from './resultsPage/search-bar.component';
+import { CardStatsComponent } from './resultsPage/cards/cardstats/card-stats.component';
+import { RadarChartComponent } from './resultsPage/radar-chart.component'
+import { PreferenceSliderComponent } from './resultsPage/preference-slider.component'
+import { PreferenceSliderContainerComponent } from './resultsPage/preference-slider-container.component'
+import { CardsComponent } from './resultsPage/cards/cards.component'
+import { TravelpathComponent } from './resultsPage/travelpath.component';
+import { ComparisonCardComponent } from './resultsPage/comparison-card.component';
+import { SingleCardComponent } from './resultsPage/cards/singlecard/single-card.component'
 
 //Services
-import { CostInfoService } from './secondPage/cost-info.service';
+import { CostInfoService } from './resultsPage/cost-info.service';
 import { AirportLocationService } from './firstPage/airport-location.service';
 import { SendCostDataService } from './send-cost-data.service'
 import { AppRoutingModule } from './app-routing.module';
@@ -58,15 +52,7 @@ import { PassDataService } from './pass-data.service';
     OptionsComponent,
     ResultsComponent,
     BannerComponent,
-    CarCardComponent,
-    AirplaneCardComponent,
     SearchBarComponent,
-    CarStatsComponent,
-    TrainStatsComponent,
-    PlaneStatsComponent,
-    WalkStatsComponent,
-    TrainCardComponent,
-    WalkCardComponent,
     LocInputComponent,
     DateInputComponent,
     TravelersComponent,
@@ -76,7 +62,9 @@ import { PassDataService } from './pass-data.service';
     CardsComponent,
     TravelpathComponent,
     ComparisonCardComponent,
-    DriveLocInputComponent
+    DriveLocInputComponent,
+    SingleCardComponent,
+    CardStatsComponent
   ],
   imports: [
     HttpModule,

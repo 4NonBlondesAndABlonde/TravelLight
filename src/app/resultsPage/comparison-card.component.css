@@ -1,0 +1,76 @@
+h3 {
+  text-align: center;
+  color: #625949;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+  min-height: 70%;
+  justify-content: space-around;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  border: solid 1px #625949;
+  border-radius: 10px;
+  float: left;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 30%;
+}
+
+.stats, .ranks, .sliders {
+  width: 100%;
+  border: solid 1px #625949;
+  border-radius: 10px;
+  float: right;
+}
+
+.ranks, .sliders {
+  margin-top: 3%;
+}
+
+.ranks:hover, .sliders:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+ol {
+  font-size: 1.25em;
+  color: #625949;
+}
+
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.rank-item {
+  cursor: pointer;
+}
+
+.rank-item:hover {
+  color: black;
+}
+
+.info {
+  font-size: 1.3em;
+  margin-left: 5%;
+}
+
+img {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+}
+
+.center {
+  text-align: center;
+}

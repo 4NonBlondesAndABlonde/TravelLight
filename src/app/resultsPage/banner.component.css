@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css?family=Courgette|Lato');
+
+.banner {
+  background:url('../assets/TravelLightBanner2.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height:100%;
+  width:100%;
+  /*display: inline-block;*/
+}
+.flex-container {
+  height: 150px;
+  /*width: 100%;*/
+  color: white;
+  display: -webkit-flex;
+  align-content: stretch;
+  /*margin-bottom: 5%;*/
+}
+a {
+  padding-left: 5%;
+  font-family: 'Courgette';
+  font-size: 2.5em;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #938380;
+}
+p {
+  display: inline-block;
+  padding-top: 5%;
+  color:ivory;
+}
+
+/*.newsearch {
+  float:right;
+}*/
+
