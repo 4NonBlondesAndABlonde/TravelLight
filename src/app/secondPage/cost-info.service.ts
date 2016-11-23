@@ -16,6 +16,7 @@ export class CostInfoService {
   private carBaseUrl = 'http://localhost:1337/api/cars';
   private transitBaseUrl = 'http://localhost:1337/api/transit';
   private trainsBaseUrl = 'http://localhost:1337/api/trains';
+
   private travelInfo: TravelInfo[] = [];
   private averageData: { data: any[], distance: number };
   private normalizedData: TravelInfo[];
@@ -89,7 +90,7 @@ export class CostInfoService {
     .map(results => results.map(<Response>(res) => res.json()))
     .map(result => {
       console.log(result)
-      this.cityNames = result[0].tripInfo 
+      this.cityNames = result[0].tripInfo
       this.travelInfo = [];
       this.travelInfo.push({
         data: [result[0].car.cost, result[0].car.time, result[0].car.emissions],
