@@ -32,7 +32,13 @@ import { PreferenceSliderContainerComponent } from './resultsPage/preference-sli
 import { CardsComponent } from './resultsPage/cards/cards.component'
 import { TravelpathComponent } from './resultsPage/travelpath.component';
 import { ComparisonCardComponent } from './resultsPage/comparison-card.component';
-import { SingleCardComponent } from './resultsPage/cards/singlecard/single-card.component'
+import { SingleCardComponent } from './resultsPage/cards/singlecard/single-card.component';
+//won't need
+import { CarStatsComponent } from './resultsPage/cards/car/car-stats.component';
+import { TrainStatsComponent } from './resultsPage/cards/train/train-stats.component';
+import { WalkStatsComponent } from './resultsPage/cards/walk/walk-stats.component';
+import { PlaneStatsComponent } from './resultsPage/cards/plane/plane-stats.component';
+
 
 //Services
 import { CostInfoService } from './resultsPage/cost-info.service';
@@ -64,7 +70,12 @@ import { PassDataService } from './pass-data.service';
     ComparisonCardComponent,
     DriveLocInputComponent,
     SingleCardComponent,
-    CardStatsComponent
+    CardStatsComponent,
+//won't need
+    CarStatsComponent,
+    TrainStatsComponent,
+    PlaneStatsComponent,
+    WalkStatsComponent,
   ],
   imports: [
     HttpModule,

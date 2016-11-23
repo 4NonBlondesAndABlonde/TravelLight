@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef, OnInit, OnChanges, DoCheck } from '@angular/core';
-import { CostInfoService } from './secondPage/cost-info.service';
+import { CostInfoService } from './resultsPage/cost-info.service';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 

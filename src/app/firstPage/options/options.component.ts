@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ModalDirective } from '../../../../node_modules/ng2-bootstrap/components/modal/modal.component';
 import { AirportLocationService } from '../airport-location.service';
-import { CostInfoService } from '../../secondPage/cost-info.service';
+import { CostInfoService } from '../../resultsPage/cost-info.service';
 import { SendCostDataService } from '../../send-cost-data.service';
 import { Router } from '@angular/router'
 
