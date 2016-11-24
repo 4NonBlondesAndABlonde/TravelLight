@@ -8,7 +8,6 @@ import 'rxjs/add/operator/catch';
 export class AirportLocationService {
   private airportsUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/airports';
 
-  
   constructor(private http: Http) {}
   
   getAirports(airportSearch: string): Observable < any[] > {
