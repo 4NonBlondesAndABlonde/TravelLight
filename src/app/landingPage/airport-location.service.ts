@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AirportLocationService {
-  private airportsUrl = 'http://http://travel-light-env.us-west-2.elasticbeanstalk.com/api/airports';
+  private airportsUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/airports';
   
   constructor(private http: Http) {}
   
