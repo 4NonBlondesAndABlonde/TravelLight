@@ -31,7 +31,6 @@ export class CardsComponent {
   constructor(private sendCostDataService: SendCostDataService) {}
     @Input() costData: any;
     ngOnInit() {
-      console.log(this.costData)
-      this.costData = this.sendCostDataService.dataStore[0]
+
     }
 }
