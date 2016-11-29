@@ -44,6 +44,7 @@ import { PreferenceSliderContainerComponent } from './secondPage/comparison/slid
 import { CardsComponent } from './secondPage/cards/cards.component';
 import { TravelpathComponent } from './secondPage/path/travelpath.component';
 import { ComparisonCardComponent } from './secondPage/comparison/comparison-card.component';
+import { AdvancedOptionsComponent } from './secondPage/advanced-options/advanced-options.component';
 
 // Services
 import { CostInfoService } from './secondPage/cost-info.service';
@@ -88,7 +89,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     CarouselComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    AdvancedOptionsComponent
   ],
   imports: [
     HttpModule,
