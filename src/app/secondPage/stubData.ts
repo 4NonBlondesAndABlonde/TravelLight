@@ -23,7 +23,7 @@ export const NORMALIZERS: TravelInfo[] = [
     },
     {
         data: [66*2 / (118.35/2 + 88), 6.85 / (11.7/2+2/85/2), 500/(749/2+783/4)],
-        label: 'plane'
+        label: 'train'
     }
 ]
 //cost, time, emissions

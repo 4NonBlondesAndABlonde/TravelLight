@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDirective } from '../../../../node_modules/ng2-bootstrap/components/modal/modal.component';
+import { SendCostDataService } from '../../send-cost-data.service';
 
 @Component({
   selector: 'app-advanced-options',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdvancedOptionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sendCostDataService: SendCostDataService) { }
 
   ngOnInit() {
   }
