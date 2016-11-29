@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { SendCostDataService } from '../send-cost-data.service';
 import { MdSlider } from '@angular2-material/slider'
+import { Observable } from 'rxjs/Rx';
+
 
 @Component({
   selector: 'app-results',
@@ -12,7 +14,12 @@ export class ResultsComponent {
   private costData: Object;
   public sliderValue: number;
   ngOnInit() {
-    this.costData = this.sendCostDataService.dataStore[0];
-    console.log('cost data: ', this.costData)
+    // Load initial data
+    this.costData = this.sendCostDataService.initialDataStore[0];
+    // Subscribe to changes
+    this.sendCostDataService.getDataObservable().subscribe(data => {
+      console.log(data)
+      this.costData = data
+    })
   }
 }
