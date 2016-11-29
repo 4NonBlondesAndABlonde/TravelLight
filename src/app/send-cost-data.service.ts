@@ -8,6 +8,7 @@ export class SendCostDataService {
   initialDataStore:Object[] = [];
   constructor() {  }
 
+
   getDataObservable():Observable<Object> {
     return this.dataStore.asObservable()
   }
