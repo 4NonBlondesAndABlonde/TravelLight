@@ -16,42 +16,47 @@ app-preference-slider-container {
   width: 100%;
   min-height: 70%;
   justify-content: space-around;
+  padding-bottom: 10%
 }
 
 .left {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /*align-items: center;*/
   width: 60%;
   border: solid 1px #625949;
   border-radius: 10px;
   float: left;
+  justify-content: flex-end;
 }
 
 .right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
   width: 30%;
+  align-items:center;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0;
 }
 
-.stats, .ranks, .sliders {
-  width: 100%;
-  border: solid 1px #625949;
+/*.stats, .ranks, */
+.sliders {
+  width: 100% !important;
+  /* border: solid 1px #625949; */
   border-radius: 10px;
-  float: right;
   padding-bottom: 15px;
+  margin-top: -5%;
 }
-
-.ranks, .sliders {
+.flex-item {
+  align-self: center;
+  width: 70%;
+}
+/*.ranks, .sliders {
   margin-top: 3%;
-}
+}*/
 
-
-.left:hover, .stats:hover, .ranks:hover, .sliders:hover {
+/*.sliders:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-}
+}*/
 
 ol {
   font-size: 1.35em;

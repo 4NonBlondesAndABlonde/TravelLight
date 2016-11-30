@@ -18,17 +18,17 @@ import { TravelInfo } from '../../travelInfo';
     </div>
   `,
   styles: [`
-    div {
-      margin-top: 2%;
-    }
-    canvas {
-      width: 80% !important;
-      height: 80% !important;
-      margin-bottom: -18%;
-      margin-left: 10%;
-    }
   `]
 })
+    // div {
+    //   margin-top: 2%;
+    // }
+    // canvas {
+    //   width: 80% !important;
+    //   height: 80% !important;
+    //   margin-bottom: -18%;
+    //   margin-left: 10%;
+    // }
 export class RadarChartComponent {
 
   constructor() {}
@@ -90,6 +90,7 @@ export class RadarChartComponent {
 
   ngOnChanges() {
     if(this.costData) {
+      console.log('Change in radar chart')
       //Order data so current travel method is in front
       let index: number = 0;
       let sortedNormalData: any[] = [];

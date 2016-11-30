@@ -1,0 +1,22 @@
+.glyphicon.glyphicon-plus-sign {
+  font-size: 45px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.form-column {
+  width: 32%;
+}
+
+input.cost {
+  width: 50px;
+}
+
+input.time {
+  width: 40px;
+}

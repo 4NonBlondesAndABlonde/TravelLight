@@ -1,11 +1,12 @@
 <div class ='results'>
   <app-banner></app-banner>
+  <app-advanced-options [costData]="costData"></app-advanced-options>
   <app-travelpath [cities]="costData.cities"></app-travelpath>
   <!--<app-walk-card></app-walk-card>
   <app-bike-card></app-bike-card>
   <app-train-card></app-train-card>-->
   <app-comparison-card [costData]="costData"></app-comparison-card>
-  <app-cards [costData]="costData"></app-cards>
+  <!--<app-cards [costData]="costData"></app-cards>-->
   <!--<div class='cards'>
     <app-car-card [costData]="costData"></app-car-card>
     <app-airplane-card [costData]="costData"></app-airplane-card>

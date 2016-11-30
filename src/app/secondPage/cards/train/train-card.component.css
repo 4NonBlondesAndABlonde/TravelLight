@@ -6,7 +6,7 @@
   border: solid 1px black;
   border-radius: 10px;
   float:left;
-  background: url('../../assets/bigtrain.jpeg') no-repeat center center;
+  background: darkgray;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,18 +14,19 @@
   color:whitesmoke;
   position:relative;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-family: Lato;
   text-shadow: 1px 1px 1px black;
     }
 .outer:hover{
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5))), url('../../assets/bigtrain.jpeg');
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/bigtrain.jpeg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.5)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  z-index: 1;
 }
 .stats {
   height:100%;
@@ -33,4 +34,36 @@
   text-align:center;
   position:absolute;
   z-index:100;
+  clear:both;
+}
+h3 {
+  margin-top:0;
+}
+.ion-ribbon-b, .glyphicon-time, .glyphicon-usd, .glyphicon-tree-deciduous{
+  width:30px;
+  float:left;
+}
+.ion-ribbon-b {
+  font-size:1.25em;
+}
+.glyphicon-time {
+  color: blueviolet;
+}
+.glyphicon-usd {
+  color: mediumseagreen;
+}
+.glyphicon-tree-deciduous {
+  color:green;
+}
+.gold {
+  color: gold;
+}
+.silver {
+  color:silver;
+}
+.bronze {
+  color: darkgoldenrod;
+}
+.icons {
+  display:inline;
 }

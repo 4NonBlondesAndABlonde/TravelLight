@@ -35,7 +35,7 @@ export class WalkStatsComponent implements OnChanges {
       let data: any[] = this.costData.data
       let index: number = 0;
       for (var i = 0; i < data.length; i++) {
-        if (data[i].label === 'walk') {
+        if (data[i].label === 'walking') {
           index = i;
           break;
         }

@@ -11,8 +11,11 @@ export class ComparisonCardComponent implements OnChanges {
   @Input() costData: any;
   planeRank: number = 0;
   carRank: number = 0;
+  trainRank: number = 0;
+  
   first: string = '';
   second: string = '';
+  third: string = '';
   travelMode:string = '';
   private preferenceArray: number[] = [1/3, 1/3, 1/3]
 
@@ -34,12 +37,21 @@ export class ComparisonCardComponent implements OnChanges {
     let averageData: any[] = this.costData.normalizedData
     let planeIndex: number = 0;
     let carIndex: number = 0;
+    let trainIndex: number = 0;
+    let walkingIndex: number = 0;
+    
     for (var i = 0; i < averageData.length; i++) {
       if (averageData[i].label === 'plane') {
         planeIndex = i;
       }
       if (averageData[i].label === 'car') {
         carIndex = i;
+      }
+      if (averageData[i].label === 'train' || averageData[i] === 'transit') {
+        trainIndex = i;
+      } 
+      if (averageData[i].label === 'walking') {
+        walkingIndex = i;
       }
     }
     let scores = averageData.map(methodData => 
@@ -53,6 +65,8 @@ export class ComparisonCardComponent implements OnChanges {
     })
     this.planeRank = rankings[planeIndex];
     this.carRank = rankings[carIndex];
+    this.trainRank = rankings[trainIndex];
+    console.log(this.planeRank, this.carRank, this.trainRank);
     if (this.planeRank < this.carRank) {
       this.first = 'plane';
       this.second = 'car';

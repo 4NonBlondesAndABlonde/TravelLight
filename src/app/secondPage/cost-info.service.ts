@@ -16,6 +16,7 @@ export class CostInfoService {
   private carBaseUrl = 'http://localhost:1337/api/cars';
   private transitBaseUrl = 'http://localhost:1337/api/transit';
   private trainsBaseUrl = 'http://localhost:1337/api/trains';
+
   private travelInfo: TravelInfo[] = [];
   private averageData: { data: any[], distance: number };
   private normalizedData: TravelInfo[];
@@ -28,13 +29,17 @@ export class CostInfoService {
   private trainsUrl:string;
   private walkingInfoUrl:string;
 
+  private bestCost:string = '';
+  private bestTime: string= '';
+  private bestEmissions: string='';
+
   constructor(private http: Http, private _ngZone:NgZone) { }
 
   // Get stub data
   sendStubData() {
     return new Observable(observer => {
       console.log({data: TRAVELDATA, normalizedData: NORMALIZERS})
-      observer.next({data: TRAVELDATA, normalizedData: NORMALIZERS})
+      observer.next({data: TRAVELDATA, normalizedData: NORMALIZERS, cities: {origin: 'ATL', destination: 'PHL'}, tripType: 'distant'})
     })
   }
 
@@ -85,7 +90,7 @@ export class CostInfoService {
     .map(results => results.map(<Response>(res) => res.json()))
     .map(result => {
       console.log(result)
-      this.cityNames = result[0].tripInfo 
+      this.cityNames = result[0].tripInfo
       this.travelInfo = [];
       this.travelInfo.push({
         data: [result[0].car.cost, result[0].car.time, result[0].car.emissions],
@@ -121,8 +126,56 @@ export class CostInfoService {
           label: travelMethod.label
         }
       })
+      this.getRankings();
       console.log('should return ' + {data: this.travelInfo, normalizedData: this.normalizedData, cities: this.cityNames})
-      return {data: this.travelInfo, normalizedData: this.normalizedData, cities: this.cityNames}
+      return {data: this.travelInfo, normalizedData: this.normalizedData, cities: this.cityNames, tripType:this.tripType, bestCost:this.bestCost, bestTime:this.bestTime, bestEmissions:this.bestEmissions}
     })
   }
+
+  getRankings() {
+//getting best cost  
+      if (this.travelInfo[0].data[0] < this.travelInfo[1].data[0] &&
+        this.travelInfo[0].data[0] < this.travelInfo[2].data[0]) {
+        this.bestCost = this.travelInfo[0].label; 
+      }
+      if (this.travelInfo[1].data[0] < this.travelInfo[0].data[0] &&
+        this.travelInfo[1].data[0] < this.travelInfo[2].data[0]) {
+        this.bestCost = this.travelInfo[1].label;
+      }
+      if (this.travelInfo[2].data[0] < this.travelInfo[0].data[0] &&
+        this.travelInfo[2].data[0] < this.travelInfo[1].data[0]) {
+        this.bestCost = this.travelInfo[2].label;
+      }
+//getting best time
+      if (this.travelInfo[0].data[1] < this.travelInfo[1].data[1] &&
+        this.travelInfo[0].data[1] < this.travelInfo[2].data[1]) {
+        this.bestTime = this.travelInfo[0].label;
+
+      }
+      if (this.travelInfo[1].data[1] < this.travelInfo[0].data[1] &&
+        this.travelInfo[1].data[1] < this.travelInfo[2].data[1]) {
+        this.bestTime = this.travelInfo[1].label;   
+      }
+      if (this.travelInfo[2].data[1] < this.travelInfo[0].data[1] &&
+        this.travelInfo[2].data[1] < this.travelInfo[1].data[1]) {
+        this.bestTime = this.travelInfo[2].label;
+      }
+//getting best emissions
+      if (this.travelInfo[0].data[2] < this.travelInfo[1].data[2] &&
+        this.travelInfo[0].data[2] < this.travelInfo[2].data[2]) {
+        this.bestEmissions = this.travelInfo[0].label;
+      }
+      if (this.travelInfo[1].data[2] < this.travelInfo[0].data[2] &&
+        this.travelInfo[1].data[2] < this.travelInfo[2].data[2]) {
+        this.bestEmissions = this.travelInfo[1].label;
+      }
+      if (this.travelInfo[2].data[2] < this.travelInfo[0].data[2] &&
+        this.travelInfo[2].data[2] < this.travelInfo[1].data[2]) {
+        this.bestEmissions = this.travelInfo[2].label;
+      }
+  }
+
+
+
+
 }

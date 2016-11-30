@@ -3,11 +3,17 @@
     <h3>At A Glance</h3>
     <app-radar-chart 
       [costData]="costData"
-      [transportMode]="travelMode">
+      [transportMode]="travelMode" class = "flex-item">
     </app-radar-chart>
+    <div class="sliders flex-item">
+      <h3>Travel Light on...</h3>
+      <app-preference-slider-container 
+        class="flex-container"
+        (preferenceNotify)="onPreferenceNotify($event)"></app-preference-slider-container>
+    </div>
   </div>
   <div class="right">
-    <div class="stats">
+    <!--<div class="stats">
       <div *ngIf="travelMode==='plane'" class="info">
         <h3><img src="../../assets/airplaneIcon.png" alt="Plane"> Your Flight</h3>
         <app-plane-stats [costData]="costData"></app-plane-stats>
@@ -23,12 +29,7 @@
         <li (click)="toFirst()" class="rank-item">{{this.first}}</li>
         <li (click)="toSecond()" class="rank-item">{{this.second}}</li>
       </ol>
-    </div>
-    <div class="sliders">
-      <h3>Travel Light on...</h3>
-      <app-preference-slider-container 
-        class="flex-container"
-        (preferenceNotify)="onPreferenceNotify($event)"></app-preference-slider-container>
-    </div>
+    </div>-->
+    <app-cards [costData]="costData"></app-cards>
   </div>
 </div>

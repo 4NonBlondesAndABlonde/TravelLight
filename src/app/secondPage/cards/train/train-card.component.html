@@ -1,0 +1,47 @@
+      <div *ngIf="method==='transit'">
+        <div class = 'outer'>
+          <div class = 'icons'>
+            <i class="ionicons ion-ribbon-b {{ place }}"></i>
+            <div *ngIf="costData.bestCost === method"> 
+              <i class="glyphicon glyphicon-usd"></i>
+            </div>
+            <div *ngIf="costData.bestTime === method">
+              <i class="glyphicon glyphicon-time"></i>
+            </div>
+            <div *ngIf="costData.bestEmissions === method">
+              <i class="glyphicon glyphicon-tree-deciduous"></i>
+            </div>
+          </div>
+        <br />
+          <div [class]="stats">
+              <h3> Travel by Public Transit</h3>
+              <app-train-stats
+              [costData]="costData">
+              </app-train-stats>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="method ==='train'">
+        <div class = 'outer'>
+          <div class = 'icons'>
+            <i class="ionicons ion-ribbon-b {{ place }}"></i>
+            <div *ngIf="costData.bestCost === method"> 
+              <i class="glyphicon glyphicon-usd"></i>
+            </div>
+            <div *ngIf="costData.bestTime === method">
+              <i class="glyphicon glyphicon-time"></i>
+            </div>
+            <div *ngIf="costData.bestEmissions === method">
+              <i class="glyphicon glyphicon-tree-deciduous"></i>
+            </div> 
+          </div>
+        <br />
+          <div [class]="stats">
+            <h3> Travel by Train or Bus</h3>
+            <app-train-stats
+            [costData]="costData">
+            </app-train-stats>
+          </div>
+        </div>
+      </div>

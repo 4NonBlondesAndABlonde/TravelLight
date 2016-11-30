@@ -44,6 +44,7 @@ import { PreferenceSliderContainerComponent } from './secondPage/comparison/slid
 import { CardsComponent } from './secondPage/cards/cards.component';
 import { TravelpathComponent } from './secondPage/path/travelpath.component';
 import { ComparisonCardComponent } from './secondPage/comparison/comparison-card.component';
+import { AdvancedOptionsComponent } from './secondPage/advanced-options/advanced-options.component';
 
 // Services
 import { CostInfoService } from './secondPage/cost-info.service';
@@ -51,7 +52,6 @@ import { AirportLocationService } from './landingPage/airport-location.service';
 import { SendCostDataService } from './send-cost-data.service'
 import { AppRoutingModule } from './app-routing.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { PassDataService } from './pass-data.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './landingPage/carousel/carousel.component';
 import { AboutComponent } from './landingPage/about/about.component';
@@ -88,7 +88,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     CarouselComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    AdvancedOptionsComponent
   ],
   imports: [
     HttpModule,
@@ -111,7 +112,6 @@ import { FooterComponent } from './footer/footer.component';
   providers: [
     CostInfoService,
     AirportLocationService,
-    PassDataService,
     SendCostDataService,
     {provide:LocationStrategy, useClass: HashLocationStrategy}
   ],
