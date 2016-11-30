@@ -12,11 +12,13 @@ export class AdvancedOptionsComponent implements OnInit {
 
   public distantOptionsForm: FormGroup;
   public localOptionsForm: FormGroup;
+  private currentData:{data:{data:number[]}[], normalizedData:{data:number[]}[]};
 
   constructor(private sendCostDataService: SendCostDataService,
               private _fb: FormBuilder) { }
 
   ngOnInit() { 
+    this.currentData = this.costData;
     this.distantOptionsForm = this._fb.group({
       carHours: Math.floor(this.costData.data[0].data[1]),
       carMins: Math.floor(60 * (this.costData.data[0].data[1] % 1)),
@@ -30,15 +32,27 @@ export class AdvancedOptionsComponent implements OnInit {
     this.localOptionsForm = this._fb.group({
       carHours: Math.floor(this.costData.data[0].data[1]),
       carMins: Math.floor(60 * (this.costData.data[0].data[1] % 1)),
-      trainCost: this.costData.data[2].data[0],
-      trainHours: Math.floor(this.costData.data[2].data[1]),
-      trainMins: Math.floor(60 * (this.costData.data[2].data[1] % 1)),
+      trainCost: this.costData.data[1].data[0],
+      trainHours: Math.floor(this.costData.data[1].data[1]),
+      trainMins: Math.floor(60 * (this.costData.data[1].data[1] % 1)),
       walkingPace: 3
     })
-    setInterval(() => console.log(this.distantOptionsForm.value), 3000)
+    this.distantOptionsForm.valueChanges.subscribe(input => {
+      this.currentData.data[0].data[1] = input.carHours + input.carMins / 60;
+      this.currentData.data[1].data[0] = input.flightCost;
+      this.currentData.data[1].data[1] = input.flightHours + input.flightMins / 60;
+      this.currentData.data[2].data[0] = input.trainCost;
+      this.currentData.data[2].data[1] = input.trainHours + input.trainMins / 60;
+    })
+    this.localOptionsForm.valueChanges.subscribe(input => {
+      this.currentData.data[0].data[1] = input.carHours + input.carMins / 60;
+      this.currentData.data[1].data[0] = input.trainCost;
+      this.currentData.data[1].data[1] = input.trainHours + input.trainMins / 60;
+      this.currentData.data[2].data[1] = this.costData.data[2].data[1] * input.walkingPace / 3
+    })
   }
 
-  @Input() costData:{data:{data:number}[]};
+  @Input() costData:{data:{data:number[]}[], normalizedData:{data:number[]}[]};
 
   @ViewChild('childModal') public childModal:ModalDirective;
  
@@ -50,9 +64,28 @@ export class AdvancedOptionsComponent implements OnInit {
     this.childModal.hide();
   }
 
-  public submit(input:Object) {
-    console.log(input)
+  recalculateAverages(info:{data:Object[]}) {
+    let totals:number[] = [0, 0, 0]
+    this.currentData.data.forEach(point => {
+      point.data.forEach((num, i) => {
+        totals[i] += num;
+      })
+    })
+    let averages:number[] = totals.map(num => num / 3)
+    console.log(averages)
+    this.currentData.normalizedData.forEach((point, i) => {
+      point.data = this.currentData.data[i].data.map((number, j) => {
+        console.log(number, averages[j])
+        return number / averages[j];
+      });
+      console.log(point.data)
+    });
   }
 
+  public submit(input:Object) {
+    console.log(input)
+    this.recalculateAverages(this.currentData)
+    this.sendCostDataService.sendData(this.currentData)
+  }
 
 }
