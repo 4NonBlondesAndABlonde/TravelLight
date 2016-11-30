@@ -90,4 +90,5 @@ export class AdvancedOptionsComponent implements OnInit {
     this.sendCostDataService.sendData(this.currentData)
   }
 
+
 }
