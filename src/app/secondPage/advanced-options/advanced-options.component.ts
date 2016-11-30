@@ -83,12 +83,10 @@ export class AdvancedOptionsComponent implements OnInit {
     });
   }
 
-
   public submit(input:Object) {
     console.log(input)
     this.recalculateAverages(this.currentData)
     this.sendCostDataService.sendData(this.currentData)
   }
-
 
 }

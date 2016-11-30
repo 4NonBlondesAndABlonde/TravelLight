@@ -39,12 +39,7 @@ export class CostInfoService {
   sendStubData() {
     return new Observable(observer => {
       console.log({data: TRAVELDATA, normalizedData: NORMALIZERS})
-<<<<<<< 911f434c533d599286cb6255fbdce13d19d78cb5
       observer.next({data: TRAVELDATA, normalizedData: NORMALIZERS, cities: {origin: 'ATL', destination: 'PHL'}, tripType: 'distant'})
-
-=======
-      observer.next({data: TRAVELDATA, normalizedData: NORMALIZERS, cities: {origin: 'ATL', destination: 'PHL'}, tripType: 'local'})
->>>>>>> Display current data on options form
     })
   }
 
