@@ -90,6 +90,7 @@ export class RadarChartComponent {
 
   ngOnChanges() {
     if(this.costData) {
+      console.log('Change in radar chart')
       //Order data so current travel method is in front
       let index: number = 0;
       let sortedNormalData: any[] = [];
