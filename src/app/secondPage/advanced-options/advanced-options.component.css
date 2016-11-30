@@ -10,5 +10,13 @@
 }
 
 .form-column {
-  width: 100px;
+  width: 32%;
+}
+
+input.cost {
+  width: 50px;
+}
+
+input.time {
+  width: 40px;
 }

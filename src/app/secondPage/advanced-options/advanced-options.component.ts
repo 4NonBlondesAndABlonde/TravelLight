@@ -18,12 +18,27 @@ export class AdvancedOptionsComponent implements OnInit {
 
   ngOnInit() { 
     this.distantOptionsForm = this._fb.group({
-      flightCost: ['55']
+      carHours: Math.floor(this.costData.data[0].data[1]),
+      carMins: Math.floor(60 * (this.costData.data[0].data[1] % 1)),
+      flightCost: this.costData.data[1].data[0],
+      flightHours: Math.floor(this.costData.data[1].data[1]),
+      flightMins: Math.floor(60 * (this.costData.data[1].data[1] % 1)),
+      trainCost: this.costData.data[2].data[0],
+      trainHours: Math.floor(this.costData.data[2].data[1]),
+      trainMins: Math.floor(60 * (this.costData.data[2].data[1] % 1))
     })
-    this.localOptionsForm = this._fb.group({})
+    this.localOptionsForm = this._fb.group({
+      carHours: Math.floor(this.costData.data[0].data[1]),
+      carMins: Math.floor(60 * (this.costData.data[0].data[1] % 1)),
+      trainCost: this.costData.data[2].data[0],
+      trainHours: Math.floor(this.costData.data[2].data[1]),
+      trainMins: Math.floor(60 * (this.costData.data[2].data[1] % 1)),
+      walkingPace: 3
+    })
+    setInterval(() => console.log(this.distantOptionsForm.value), 3000)
   }
 
-  @Input() costData:Object;
+  @Input() costData:{data:{data:number}[]};
 
   @ViewChild('childModal') public childModal:ModalDirective;
  
@@ -38,5 +53,6 @@ export class AdvancedOptionsComponent implements OnInit {
   public submit(input:Object) {
     console.log(input)
   }
+
 
 }
