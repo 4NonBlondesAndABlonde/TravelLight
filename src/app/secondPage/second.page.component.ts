@@ -17,8 +17,9 @@ export class ResultsComponent {
     this.costData = this.sendCostDataService.initialDataStore[0];
     // Subscribe to changes
     this.sendCostDataService.getDataObservable().subscribe(data => {
-      console.log(data)
-      this.costData = data
+      console.log('observed change ' + data)
+      this.costData = data;
+      console.log(this.costData)
     })
   }
 }
