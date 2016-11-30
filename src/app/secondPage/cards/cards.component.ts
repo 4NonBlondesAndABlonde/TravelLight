@@ -30,7 +30,5 @@ import { SendCostDataService } from '../../send-cost-data.service'
 export class CardsComponent {
   constructor(private sendCostDataService: SendCostDataService) {}
     @Input() costData: any;
-    ngOnInit() {
-
-    }
+    ngOnInit() { }
 }

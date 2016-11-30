@@ -52,7 +52,6 @@ import { AirportLocationService } from './landingPage/airport-location.service';
 import { SendCostDataService } from './send-cost-data.service'
 import { AppRoutingModule } from './app-routing.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { PassDataService } from './pass-data.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './landingPage/carousel/carousel.component';
 import { AboutComponent } from './landingPage/about/about.component';
@@ -113,7 +112,6 @@ import { FooterComponent } from './footer/footer.component';
   providers: [
     CostInfoService,
     AirportLocationService,
-    PassDataService,
     SendCostDataService,
     {provide:LocationStrategy, useClass: HashLocationStrategy}
   ],
