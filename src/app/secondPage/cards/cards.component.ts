@@ -31,5 +31,4 @@ export class CardsComponent {
   constructor(private sendCostDataService: SendCostDataService) {}
     @Input() costData: any;
     ngOnInit() { }
-
 }

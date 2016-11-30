@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { SendCostDataService } from '../send-cost-data.service';
 import { MdSlider } from '@angular2-material/slider'
-import { Observable } from 'rxjs/Rx';
 
 
 
