@@ -8,47 +8,66 @@
       <div class="modal-header">
         <h4 class="modal-title">Advanced Options</h4>
       </div>
-      <form *ngIf="costData.tripType==='distant'" [formGroup]="distantOptionsForm" (ngSubmit)="submit(advancedOptionsForm.value)">
+      <form *ngIf="costData.tripType==='distant'" [formGroup]="distantOptionsForm" (ngSubmit)="submit(distantOptionsForm.value)">
         <div class="modal-body" >
           <div class="flex-container">
             <div class="form-column">
               <h5>Car Info</h5>
+              <label for="car-time">Time: </label>
+              <input type="number" [formControl]="distantOptionsForm.controls['carHours']" class="time"> hours, 
+              <input type="number" [formControl]="distantOptionsForm.controls['carMins']" class="time"> min
             </div>
             <div class="form-column">
               <h5>Flight Info</h5>
-              <label for="plane-cost">Cost: </label>
-              <input type="text" formContolName="flightCost">
+              <label for="plane-cost">Cost: $</label>
+              <input type="number" [formControl]="distantOptionsForm.controls['flightCost']" class="cost"><br />
+              <label for="plane-time">Time: </label>
+              <input type="number" [formControl]="distantOptionsForm.controls['flightHours']" class="time"> hours, 
+              <input type="number" [formControl]="distantOptionsForm.controls['flightMins']" class="time"> min
             </div>
             <div class="form-column">
               <h5>Train / Bus Info</h5>
+              <label for="train-cost">Cost: $</label>
+              <input type="number" [formControl]="distantOptionsForm.controls['trainCost']" class="cost"><br />
+              <label for="train-time">Time: </label>
+              <input type="number" [formControl]="distantOptionsForm.controls['trainHours']" class="time"> hours, 
+              <input type="number" [formControl]="distantOptionsForm.controls['trainMins']" class="time"> min
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" type="submit" [disabled]="!true" (click)="mdModal.hide()">
-            Submit
+            Update
           </button>
         </div>
       </form>
-      <form *ngIf="costData.tripType==='local'" [formGroup]="localOptionsForm" (ngSubmit)="submit(advancedOptionsForm.value)">
+      <form *ngIf="costData.tripType==='local'" [formGroup]="localOptionsForm" (ngSubmit)="submit(localOptionsForm.value)">
         <div class="modal-body" >
           <div class="flex-container">
             <div class="form-column">
               <h5>Car Info</h5>
-            </div>
-            <div class="form-column">
-              <h5>Flight Info</h5>
-              <label for="plane-cost">Cost: </label>
-              <input>
+              <label for="car-time">Time: </label>
+              <input type="number" [formControl]="localOptionsForm.controls['carHours']" class="time"> hours,
+              <input type="number" [formControl]="localOptionsForm.controls['carMins']" class="time"> min
             </div>
             <div class="form-column">
               <h5>Train / Bus Info</h5>
+              <label for="train-cost">Cost: $</label>
+              <input type="number" [formControl]="localOptionsForm.controls['trainCost']" class="cost"><br />
+              <label for="train-time">Time: </label>
+              <input type="number" [formControl]="localOptionsForm.controls['trainHours']" class="time"> hours, 
+              <input type="number" [formControl]="localOptionsForm.controls['trainMins']" class="time"> min
+            </div>
+            <div class="form-column">
+              <h5>Walking Info</h5>
+              <label for="walking-pace">Cost: </label>
+              <input type="number" [formControl]="localOptionsForm.controls['walkingPace']" class="time"> mph
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" type="submit" [disabled]="!true" (click)="mdModal.hide()">
-            Submit
+            Update
           </button>
         </div>
       </form>
