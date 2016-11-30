@@ -6,9 +6,7 @@ import { BehaviorSubject }    from 'rxjs/BehaviorSubject';
 export class SendCostDataService {
   private dataStore:BehaviorSubject<Object> = new BehaviorSubject({});
   initialDataStore:Object[] = [];
-  constructor() { 
-    this.getDataObservable().subscribe(data => console.log(data))
-  }
+  constructor() {  }
 
   getDataObservable():Observable<Object> {
     return this.dataStore.asObservable()
@@ -19,6 +17,7 @@ export class SendCostDataService {
     if (this.initialDataStore.length === 0) {
       this.initialDataStore = [data]
     }
+    // Use observable for subsequent changes
     this.dataStore.next(data)
   }
 }
