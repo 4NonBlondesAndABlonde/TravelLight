@@ -1,3 +1,57 @@
 <p (click)="mdModal.show()">
   <span class="glyphicon glyphicon-plus-sign"></span>Advanced Options
 </p>
+
+<div bsModal #mdModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md" style="min-height: 1000px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Advanced Options</h4>
+      </div>
+      <form *ngIf="costData.tripType==='distant'" [formGroup]="distantOptionsForm" (ngSubmit)="submit(advancedOptionsForm.value)">
+        <div class="modal-body" >
+          <div class="flex-container">
+            <div class="form-column">
+              <h5>Car Info</h5>
+            </div>
+            <div class="form-column">
+              <h5>Flight Info</h5>
+              <label for="plane-cost">Cost: </label>
+              <input type="text" formContolName="flightCost">
+            </div>
+            <div class="form-column">
+              <h5>Train / Bus Info</h5>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" [disabled]="!true" (click)="mdModal.hide()">
+            Submit
+          </button>
+        </div>
+      </form>
+      <form *ngIf="costData.tripType==='local'" [formGroup]="localOptionsForm" (ngSubmit)="submit(advancedOptionsForm.value)">
+        <div class="modal-body" >
+          <div class="flex-container">
+            <div class="form-column">
+              <h5>Car Info</h5>
+            </div>
+            <div class="form-column">
+              <h5>Flight Info</h5>
+              <label for="plane-cost">Cost: </label>
+              <input>
+            </div>
+            <div class="form-column">
+              <h5>Train / Bus Info</h5>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="submit" [disabled]="!true" (click)="mdModal.hide()">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
