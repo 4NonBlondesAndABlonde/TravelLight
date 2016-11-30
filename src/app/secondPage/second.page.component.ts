@@ -3,7 +3,6 @@ import { SendCostDataService } from '../send-cost-data.service';
 import { MdSlider } from '@angular2-material/slider'
 
 
-
 @Component({
   selector: 'app-results',
   templateUrl: './second.page.component.html',
