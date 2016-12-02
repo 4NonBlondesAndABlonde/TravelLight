@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
 // import { RadarChartComponent } from '../../radar-chart.component';
-import {Card} from "ng2-card/ng2-card";
 
 
 @Component({

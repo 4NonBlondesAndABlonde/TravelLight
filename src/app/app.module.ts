@@ -47,7 +47,6 @@ import { TravelpathComponent } from './secondPage/path/travelpath.component';
 import { ComparisonCardComponent } from './secondPage/comparison/comparison-card.component';
 import { AdvancedOptionsComponent } from './secondPage/advanced-options/advanced-options.component';
 import { CarInputComponent } from './secondPage/car-input/car-input.component';
-import { Card } from '../../node_modules/ng2-card/ng2-card'
 
 
 
@@ -101,7 +100,6 @@ import { LoadingPageComponent } from './loadingPage/loading-page.component';
     AdvancedOptionsComponent,
     CarInputComponent,
     LoadingPageComponent,
-    Card,
   ],
   imports: [
     HttpModule,
