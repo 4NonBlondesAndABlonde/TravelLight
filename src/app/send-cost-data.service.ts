@@ -12,18 +12,20 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SendCostDataService {
   private dataStore:BehaviorSubject<Object> = new BehaviorSubject({});
   initialDataStore:Object[] = [];
-  constructor() {  }
+  constructor(private router: Router) {  }
 
   getDataObservable():Observable<Object> {
     return this.dataStore.asObservable()
   }
 
   sendData(data: Object) {
+    this.router.navigate(['loading'])
     // Load data directly the first time
     if (this.initialDataStore.length === 0) {
       this.initialDataStore = [data]
