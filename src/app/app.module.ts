@@ -93,7 +93,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     FooterComponent,
     AdvancedOptionsComponent,
-    CarInputComponent
+    CarInputComponent,
   ],
   imports: [
     HttpModule,
