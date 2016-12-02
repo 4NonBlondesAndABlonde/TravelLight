@@ -57,7 +57,7 @@ export class AdvancedOptionsComponent implements OnInit {
   @Input() costData:{data:{data:number[]}[], normalizedData:{data:number[]}[], distance:number};
 
   onCarNotify(payload:{EPM?:number, MPG?:number, Car?:string}){
-    console.log(payload)
+    //console.log(payload)
     if (payload.EPM !== undefined && payload.MPG !== undefined) {
       console.log(this.currentData.data[0])
       this.currentData.data[0].data[2] = payload.EPM * this.costData.distance;
