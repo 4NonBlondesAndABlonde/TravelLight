@@ -10,12 +10,12 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CostInfoService {
 
-  private walkingBaseUrl = 'http://localhost:1337/api/walking';
-  private planeBaseUrl = 'http://localhost:1337/api/planes';
-  private averagesBaseUrl = 'http://localhost:1337/api/normalizers';
-  private carBaseUrl = 'http://localhost:1337/api/cars';
-  private transitBaseUrl = 'http://localhost:1337/api/transit';
-  private trainsBaseUrl = 'http://localhost:1337/api/trains';
+  private walkingBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/walking';
+  private planeBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/planes';
+  private averagesBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/normalizers';
+  private carBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/cars';
+  private transitBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/transit';
+  private trainsBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/trains';
   private travelInfo: TravelInfo[] = [];
   private averageData: { data: any[], distance: number };
   private normalizedData: TravelInfo[];
