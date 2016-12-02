@@ -59,6 +59,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './landingPage/carousel/carousel.component';
 import { AboutComponent } from './landingPage/about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoadingPageComponent } from './loadingPage/loading-page.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +95,7 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
     AdvancedOptionsComponent,
     CarInputComponent,
+    LoadingPageComponent,
   ],
   imports: [
     HttpModule,

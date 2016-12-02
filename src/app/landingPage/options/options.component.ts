@@ -72,6 +72,7 @@ export class OptionsComponent {
     .subscribe(results => {
       console.log('recieved ' + results)
       this.sendCostDataService.sendData(results)
+      // setTimeout(() => this.router.navigate(['loading']), 0)
       setTimeout(() => this.router.navigate(['results']), 0)
     })
   }
