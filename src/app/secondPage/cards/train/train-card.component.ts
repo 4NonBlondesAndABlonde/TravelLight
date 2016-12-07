@@ -14,7 +14,7 @@ export class TrainCardComponent implements OnChanges {
   @Input() changes: Boolean;
   @Input() rank: number;
   ranking: number = 0;
-  method: string = '';
+  method: string = 'train';
   place: string = '';
   trees: any=[];
   numTrees:number=0;

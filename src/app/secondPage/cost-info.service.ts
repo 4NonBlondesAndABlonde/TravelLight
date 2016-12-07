@@ -10,12 +10,12 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CostInfoService {
 
-  private walkingBaseUrl = 'http://localhost:1337/api/walking';
-  private planeBaseUrl = 'http://localhost:1337/api/planes';
-  private averagesBaseUrl = 'http://localhost:1337/api/normalizers';
-  private carBaseUrl = 'http://localhost:1337/api/cars';
-  private transitBaseUrl = 'http://localhost:1337/api/transit';
-  private trainsBaseUrl = 'http://localhost:1337/api/trains';
+  private walkingBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/walking';
+  private planeBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/planes';
+  private averagesBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/normalizers';
+  private carBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/cars';
+  private transitBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/transit';
+  private trainsBaseUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/trains';
   private travelInfo: TravelInfo[] = [];
   private averageData: { data: any[], distance: number };
   private normalizedData: TravelInfo[];
@@ -37,7 +37,6 @@ export class CostInfoService {
   // Get stub data
   sendStubData() {
     return new Observable(observer => {
-      console.log({data: TRAVELDATA, normalizedData: NORMALIZERS})
       observer.next({data: TRAVELDATA, normalizedData: NORMALIZERS, cities: {origin: 'ATL', destination: 'PHL'}, tripType: 'distant', distance: 10})
     })
   }
@@ -45,8 +44,6 @@ export class CostInfoService {
 
   sendUserInput(userInput:{originLat:number, originLng:number, destinationLat:number, destinationLng:number, originDriveLatitude:number, originDriveLongitude:number, destinationDriveLatitude:number, destinationDriveLongitude:number, travelers:number, date:string, originAirportCode:string, destinationAirportCode:string, tripType:string}) {
     return new Observable(observer => {
-
-      console.log(userInput);
       this.tripType = userInput.tripType
       this.planeInfoUrl = this.planeBaseUrl + `/${userInput.originAirportCode}/${userInput.destinationAirportCode}/${userInput.date}/${userInput.travelers}/${userInput.originLat}/${userInput.originLng}/${userInput.destinationLat}/${userInput.destinationLng}`;
       this.averagesUrl = this.averagesBaseUrl + `/${userInput.travelers}/${userInput.originDriveLatitude}/${userInput.originDriveLongitude}/${userInput.destinationDriveLatitude}/${userInput.destinationDriveLongitude}/${userInput.tripType}`;
@@ -60,7 +57,6 @@ export class CostInfoService {
       } else if (userInput.tripType === 'local') {
         urlArray.push(this.http.get(this.carInfoUrl), this.http.get(this.transitUrl), this.http.get(this.walkingInfoUrl), this.http.get(this.averagesUrl))
       }
-      console.log(urlArray)
       this.getCosts(urlArray)
       .subscribe(data => observer.next(data))
     })
@@ -88,7 +84,6 @@ export class CostInfoService {
     return Observable.forkJoin(urlArray)
     .map(results => results.map(<Response>(res) => res.json()))
     .map(result => {
-      console.log(result)
       this.cityNames = result[0].tripInfo 
       this.travelInfo = [];
       this.travelInfo.push({
@@ -110,7 +105,6 @@ export class CostInfoService {
         data: [result[2].cost, result[2].time, result[2].emissions],
         label: result[2].mode
       })
-      console.log('Travel info array: ' + this.travelInfo)
       let averages = result[result.length - 1]
       this.averageData = {
         distance: averages.distance,
@@ -126,7 +120,6 @@ export class CostInfoService {
         }
       })
       this.getRankings();
-      console.log('should return ' + {data: this.travelInfo, normalizedData: this.normalizedData, cities: this.cityNames})
       return {data: this.travelInfo, normalizedData: this.normalizedData, cities: this.cityNames, tripType:this.tripType, distance: this.averageData.distance, bestCost:this.bestCost, bestTime:this.bestTime, bestEmissions:this.bestEmissions}
     })
   }

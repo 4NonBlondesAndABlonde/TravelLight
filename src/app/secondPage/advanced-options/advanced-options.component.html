@@ -1,6 +1,7 @@
-<p (click)="mdModal.show()">
-  <span class="glyphicon glyphicon-plus-sign"></span>Advanced Options
-</p>
+<div (click)="mdModal.show()" class="advanced-modal">
+  <div class="glyphicon glyphicon-plus-sign"></div>
+  <div class="advanced-text">Advanced Options</div>
+</div>
 
 <div bsModal #mdModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myMediumModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md" style="min-height: 1000px;">

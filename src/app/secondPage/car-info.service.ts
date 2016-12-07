@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class CarInfoService {
-  private carModelUrl = 'http://localhost:1337/api/carModels'
+  private carModelUrl = 'http://travel-light-env.us-west-2.elasticbeanstalk.com/api/carModels'
   constructor(private http: Http) { }
 
   getCars(carSearch: string): Observable < any[] > {

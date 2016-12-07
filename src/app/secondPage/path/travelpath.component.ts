@@ -5,8 +5,8 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <div class="path flex-container">
       <h3 class="flex-item text">{{cities.origin}}</h3>
-      <img class="flex-item arrow" src='../assets/arrow.png'/>
-      <h3 class="flex-item text">{{cities.destination}}</h3>
+      <img *ngIf="tripType === 'distant'" class="flex-item arrow" src='../assets/arrow.png'/>
+      <h3 *ngIf="tripType === 'distant'" class="flex-item text">{{cities.destination}}</h3>
     </div>
   `,
   styles: [`
@@ -32,6 +32,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TravelpathComponent implements OnInit {
   @Input() cities:{destination:string, origin:string};
+  @Input() tripType:string;
 
   constructor() { }
 

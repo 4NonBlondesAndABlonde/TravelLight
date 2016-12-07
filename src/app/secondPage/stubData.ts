@@ -5,11 +5,11 @@ export const TRAVELDATA: TravelInfo[] = [
     },
     {
         data: [88 * 2, 2.85, 749],
-        label: 'transit'
+        label: 'plane'
     },
     {
         data: [66 * 2, 6.85, 500],
-        label: 'walking'
+        label: 'train'
     }
 ]
 
@@ -19,11 +19,11 @@ export const NORMALIZERS: TravelInfo[] = [
     },
     {
         data: [88*2 / (118.35/2 + 88), 2.85 / (11.7/2+2/85/2), 749/(749/2+783/4)],
-        label: 'transit'
+        label: 'plane'
     },
     {
         data: [66*2 / (118.35/2 + 88), 6.85 / (11.7/2+2/85/2), 500/(749/2+783/4)],
-        label: 'walking'
+        label: 'train'
     }
 ]
 //cost, time, emissions

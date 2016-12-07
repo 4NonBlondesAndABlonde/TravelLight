@@ -154,7 +154,7 @@ export class ComparisonCardComponent implements OnChanges {
   ngOnChanges() {
     if (this.costData) {
       this.calculateBestChoice()
-      this.toFirst()
+      //this.toFirst()
     }
   }
 }

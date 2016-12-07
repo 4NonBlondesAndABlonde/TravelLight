@@ -4,11 +4,19 @@ nav {
   padding: 10px;
 }
 
-p {
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div.pull-left {
   margin: 0;
   font-size: 1.8em;
   font-family: Courgette;
   color: #333;
+  min-width: 160px;
 }
 
 ul {

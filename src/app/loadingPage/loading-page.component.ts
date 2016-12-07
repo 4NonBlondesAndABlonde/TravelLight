@@ -21,9 +21,7 @@ export class LoadingPageComponent implements OnInit {
 
   private currentStatement:string;
   private getCurrentStatement = () => {
-    console.log(this.statementArray.length)
     this.currentStatement = this.statementArray.splice(Math.floor(Math.random()*this.statementArray.length), 1)[0]
-    console.log(this.currentStatement)
   };
   constructor() {
    }

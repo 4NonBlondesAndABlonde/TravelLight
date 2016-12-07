@@ -1,5 +1,16 @@
 .glyphicon.glyphicon-plus-sign {
-  font-size: 25px;
+  font-size: 28px;
+}
+
+.advanced-modal {
+  font-size: 20px;
+  display: flex;
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+.advanced-text {
+  padding-left: 2px;
 }
 
 .ion-help-circled {

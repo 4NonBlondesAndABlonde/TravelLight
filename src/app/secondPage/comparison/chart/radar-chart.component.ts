@@ -20,25 +20,18 @@ import { TravelInfo } from '../../travelInfo';
   styles: [`
   `]
 })
-    // div {
-    //   margin-top: 2%;
-    // }
-    // canvas {
-    //   width: 80% !important;
-    //   height: 80% !important;
-    //   margin-bottom: -18%;
-    //   margin-left: 10%;
-    // }
+
 export class RadarChartComponent {
 
   constructor() {}
   @Input() costData: any;
-  @Input() transportMode: string;
+  @Input() planeRank: number;
+  @Input() carRank: number;
+  @Input() trainRank: number;
+  @Input() walkingRank: number;
   @Input() changes: Boolean;
   public radarChartData: TravelInfo[] = [{data: [0, 0, 0], label: ''}];
   public toolTipData: TravelInfo[];
-
-  // Radar
   public radarChartLabels:string[] = ['Cost', 'Time', 'Emissions'];
   public radarChartType:string = 'radar';
   public radarChartOptions:any = {
@@ -80,34 +73,35 @@ export class RadarChartComponent {
     responsive: true
   }
 
-  // events
-  public chartClicked(e:any):void {
-    //console.log(e);
-  }
-
-  public chartHovered(e:any):void {
-    //console.log(e);
-  }
 
   ngOnChanges() {
     if(this.costData) {
       //Order data so current travel method is in front
-      let index: number = 0;
+      let ranks:Object = {
+        car: this.carRank,
+        plane: this.planeRank,
+        train: this.trainRank,
+        transit: this.trainRank,
+        walking: this.walkingRank
+      };
       let sortedNormalData: any[] = [];
       let sortedData: any[] = [];
       this.costData.normalizedData.forEach(cost => {
-        cost.label === this.transportMode ? 
-        sortedNormalData.unshift(cost) : sortedNormalData.push(cost);
+        let index = ranks[cost.label] - 1
+        sortedNormalData[index] = cost;
       });
       this.costData.data.forEach(cost => {
-        cost.label === this.transportMode ? 
-        sortedData.unshift(cost) : sortedData.push(cost);
+        let index = ranks[cost.label] - 1
+        sortedData[index] = cost;
       });
       let normalizedData = sortedNormalData.map(datum => {
         // Set current data's color to green
-        if (datum.label === this.transportMode) {
+        if (ranks[datum.label] === 1) {
           datum.backgroundColor = 'rgba(0,153,51,0.5)';
           datum.borderColor = 'rgba(0,153,51,1)';
+        } else if (ranks[datum.label] === 2){
+          datum.backgroundColor = 'rgba(66, 146, 244 ,0.5)';
+          datum.borderColor = 'rgba(66, 146, 244 ,1)';
         } else {
           datum.backgroundColor = 'rgba(58, 79, 66,0.5)';
           datum.borderColor = 'rgba(58, 79, 66,1)';
@@ -116,7 +110,6 @@ export class RadarChartComponent {
       })
       // Set chart data, and display data for info / tooltip
       this.radarChartData = normalizedData;
-      console.log('chart data' + this.radarChartData)
       this.toolTipData = sortedData;
     }
   }
