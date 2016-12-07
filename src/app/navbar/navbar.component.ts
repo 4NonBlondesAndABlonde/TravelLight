@@ -65,11 +65,10 @@ export class NavbarComponent {
   }
 
   onClick() {
-    console.log('sending ' + this.information)
+    setTimeout(() => this.router.navigate(['loading']), 0)
     this.costInfoService.sendUserInput(this.information)
     //this.costInfoService.sendStubData()
     .subscribe(results => {
-      console.log('recieved ' + results)
       this.sendCostDataService.sendData(results)
       setTimeout(() => this.router.navigate(['results']), 0)
     })

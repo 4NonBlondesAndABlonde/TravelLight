@@ -40,26 +40,24 @@ export class AdvancedOptionsComponent implements OnInit {
       walkingPace: 3
     })
     this.distantOptionsForm.valueChanges.subscribe(input => {
-      this.currentData.data[0].data[1] = input.carHours + input.carMins / 60;
-      this.currentData.data[1].data[0] = input.flightCost;
-      this.currentData.data[1].data[1] = input.flightHours + input.flightMins / 60;
-      this.currentData.data[2].data[0] = input.trainCost;
-      this.currentData.data[2].data[1] = input.trainHours + input.trainMins / 60;
+      this.currentData.data[0].data[1] = Number(input.carHours) + Number(input.carMins) / 60;
+      this.currentData.data[1].data[0] = Number(input.flightCost);
+      this.currentData.data[1].data[1] = Number(input.flightHours) + Number(input.flightMins) / 60;
+      this.currentData.data[2].data[0] = Number(input.trainCost);
+      this.currentData.data[2].data[1] = Number(input.trainHours) + Number(input.trainMins) / 60;
     })
     this.localOptionsForm.valueChanges.subscribe(input => {
-      this.currentData.data[0].data[1] = input.carHours + input.carMins / 60;
-      this.currentData.data[1].data[0] = input.trainCost;
-      this.currentData.data[1].data[1] = input.trainHours + input.trainMins / 60;
-      this.currentData.data[2].data[1] = this.costData.distance / input.walkingPace
+      this.currentData.data[0].data[1] = Number(input.carHours) + Number(input.carMins) / 60;
+      this.currentData.data[1].data[0] = Number(input.trainCost);
+      this.currentData.data[1].data[1] = Number(input.trainHours) + Number(input.trainMins) / 60;
+      this.currentData.data[2].data[1] = this.costData.distance / Number(input.walkingPace)
     })
   }
 
   @Input() costData:{data:{data:number[]}[], normalizedData:{data:number[]}[], distance:number};
 
   onCarNotify(payload:{EPM?:number, MPG?:number, Car?:string}){
-    //console.log(payload)
     if (payload.EPM !== undefined && payload.MPG !== undefined) {
-      console.log(this.currentData.data[0])
       this.currentData.data[0].data[2] = payload.EPM * this.costData.distance;
       this.currentData.data[0].data[0] = this.costData.distance / payload.MPG * 2.15;
     }
@@ -100,7 +98,6 @@ export class AdvancedOptionsComponent implements OnInit {
   }
 
   public submit(input:Object) {
-    console.log(input)
     this.recalculateAverages(this.currentData)
     this.sendCostDataService.sendData(this.currentData)
   }

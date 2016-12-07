@@ -3,7 +3,14 @@
 }
 
 .advanced-modal {
-  font-size: 28px;
+  font-size: 20px;
+  display: flex;
+  padding-left: 3px;
+  padding-top: 3px;
+}
+
+.advanced-text {
+  padding-left: 2px;
 }
 
 .ion-help-circled {

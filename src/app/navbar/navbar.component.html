@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <p class="pull-left">Travel Light</p>
-  <i class="fa fa-compass fa-2x   center" aria-hidden="true"></i>
-  <ul class="pull-right">
-    <li>
+  <div class="flex-container">
+    <div class="pull-left">Travel Light</div>
+    <i class="fa fa-compass fa-2x center" aria-hidden="true"></i>
+    <div class="pull-right">
       <button type="button" class="btn" (click)="showModal()">Start A New Journey</button>
-    </li>
-  </ul>
+    </div>
+  </div>
 </nav>
   
 <div bsModal #mdModal="bs-modal" class="modal fade" tabindex="-2" role="dialog" aria-labelledby="myMediumModalLabel" aria-hidden="true">

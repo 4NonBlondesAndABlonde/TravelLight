@@ -10,36 +10,21 @@
     <h3>At A Glance</h3>
     <app-radar-chart 
       [costData]="costData"
-      [transportMode]="travelMode" 
       [changes]="changes"
+      [planeRank]="planeRank"
+      [carRank]="carRank"
+      [trainRank]="trainRank"
+      [walkingRank]="walkingRank"     
       class = "flex-item">
     </app-radar-chart>
   </div>
   <div class="right">
-
-    <!--<div class="stats">
-      <div *ngIf="travelMode==='plane'" class="info">
-        <h3><img src="../../assets/airplaneIcon.png" alt="Plane"> Your Flight</h3>
-        <app-plane-stats [costData]="costData"></app-plane-stats>
-      </div>
-      <div *ngIf="travelMode==='car'" class="info">
-        <h3><img src="../../assets/carIcon.png" alt="Car"> Your Drive</h3>     
-        <app-car-stats [costData]="costData"></app-car-stats>
-      </div>
-    </div>
-    <div class="ranks">
-      <h3>Best Choice for You</h3>
-      <ol>
-        <li (click)="toFirst()" class="rank-item">{{this.first}}</li>
-        <li (click)="toSecond()" class="rank-item">{{this.second}}</li>
-      </ol>
-    </div>-->
     <app-cards [costData]="costData" 
-    [changes]="changes"
-    [planeRank]="planeRank"
-    [carRank]="carRank"
-    [trainRank]="trainRank"
-    [walkingRank]="walkingRank">
+      [changes]="changes"
+      [planeRank]="planeRank"
+      [carRank]="carRank"
+      [trainRank]="trainRank"
+      [walkingRank]="walkingRank">
     </app-cards>
   </div>
 </div>

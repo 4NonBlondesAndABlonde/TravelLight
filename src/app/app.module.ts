@@ -29,10 +29,8 @@ import { SloganComponent } from './landingPage/slogan/slogan.component';
 
 // Results page
 import { ResultsComponent } from './secondPage/second.page.component';
-import { BannerComponent } from './secondPage/nav/banner.component';
 import { CarCardComponent } from './secondPage/cards/car/car-card.component';
 import { AirplaneCardComponent } from './secondPage/cards/plane/airplane-card.component';
-import { SearchBarComponent} from './secondPage/nav/searchbar/search-bar.component';
 import { CarStatsComponent } from './secondPage/cards/car/car-stats.component';
 import { TrainStatsComponent } from './secondPage/cards/train/train-stats.component';
 import { WalkStatsComponent } from './secondPage/cards/walk/walk-stats.component';
@@ -58,7 +56,6 @@ import { SendCostDataService } from './send-cost-data.service'
 import { CarInfoService } from './secondPage/car-info.service'
 import { AppRoutingModule } from './app-routing.module';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { PassDataService } from './pass-data.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarouselComponent } from './landingPage/carousel/carousel.component';
 import { AboutComponent } from './landingPage/about/about.component';
@@ -73,10 +70,8 @@ import { LoadingPageComponent } from './loadingPage/loading-page.component';
     SloganComponent,
     OptionsComponent,
     ResultsComponent,
-    BannerComponent,
     CarCardComponent,
     AirplaneCardComponent,
-    SearchBarComponent,
     CarStatsComponent,
     TrainStatsComponent,
     PlaneStatsComponent,
@@ -123,7 +118,6 @@ import { LoadingPageComponent } from './loadingPage/loading-page.component';
   providers: [
     CostInfoService,
     AirportLocationService,
-    PassDataService,
     SendCostDataService,
     CarInfoService,
     {provide:LocationStrategy, useClass: HashLocationStrategy}

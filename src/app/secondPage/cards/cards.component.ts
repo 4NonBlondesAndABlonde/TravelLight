@@ -29,7 +29,6 @@ import { SendCostDataService } from '../../send-cost-data.service'
 })
 export class CardsComponent {
   constructor(private sendCostDataService: SendCostDataService) {
-    setTimeout(()=>console.log('car ', this.carRank, 'plane ', this.planeRank, 'train ', this.trainRank), 1000)
   }
     @Input() costData: any;
     @Input() changes: Boolean;

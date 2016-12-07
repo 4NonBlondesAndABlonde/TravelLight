@@ -50,7 +50,6 @@ export class TrainStatsComponent implements OnChanges {
 
   public htmlTooltip:string = '';
   public tooltipStateChanged(state: boolean):void {
-    console.log(`Tooltip is open: ${state}`);
   }
   @Input('tooltipHtml') public htmlContent:string;
   
@@ -82,7 +81,6 @@ export class TrainStatsComponent implements OnChanges {
       this.emissions = data[index].data[2].toFixed(2)
     
       this.numTrees = Math.round(this.emissions/48 * 2)/2;
-      console.log(this.numTrees);
       this.htmlTooltip = 'You would need to plant ' + this.numTrees + ' trees to account for the emissions during this trip'
 
     }

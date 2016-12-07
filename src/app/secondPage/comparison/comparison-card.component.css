@@ -28,7 +28,8 @@ app-preference-slider-container {
   border-radius: 10px;
   float: left;
   justify-content: flex-end;
-  height:100%
+  height:100%;
+  background-color: white;
 }
 
 .right {
